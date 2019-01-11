@@ -1,4 +1,4 @@
-import postsApi, { POSTS } from './../../../common/api/blogApi';
+import postsApi, { POSTS } from '../../../common/api/blogApi';
 import { PostModel } from './reducer';
 import { actionTypes, IPostRequestAction, postRequestSuccess, postRequestFailure, postRequestPending } from './actions';
 import { put, takeLatest, call } from 'redux-saga/effects'

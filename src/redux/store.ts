@@ -3,8 +3,10 @@ import { createStore, Store } from 'redux';
 import reducers from './reducers';
 import middlewares, { sagaMiddleware } from './middlewares';
 import { AppState } from './AppState';
-import sagas from '../features/posts/duck/sagas';
+import sagas from './sagas';
 
-export const store: Store<AppState> = createStore(reducers,composeWithDevTools(middlewares));
+
+
+export const store: Store<AppState> = createStore(reducers, composeWithDevTools(middlewares));
 
 sagaMiddleware.run(sagas);

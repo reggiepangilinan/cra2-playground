@@ -5,5 +5,6 @@ const api: AxiosInstance = axios.create({
 });
 
 export const POSTS = '/posts';
+export const TODOS = '/todos';
 
 export default api;
