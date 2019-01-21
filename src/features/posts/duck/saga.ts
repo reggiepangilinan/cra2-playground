@@ -1,17 +1,18 @@
-import postsApi, { POSTS } from '../../../common/api/blogApi';
-import { PostModel } from './reducer';
+
 import { actionTypes, IPostRequestAction, postRequestSuccess, postRequestFailure, postRequestPending } from './actions';
 import { put, takeLatest, call } from 'redux-saga/effects'
 import { SagaIterator } from 'redux-saga';
-import { AxiosPromise, AxiosResponse, AxiosError } from 'axios';
+import { AxiosResponse } from 'axios';
+import { PostModel } from './state';
+import blogApi, { IBlogApi } from '../../../api/blogApi';
 
 function* fetchPosts(action: IPostRequestAction) {
     try {
         yield put(postRequestPending());
 
-        const getPosts = (): AxiosPromise<PostModel[]> => postsApi.get(POSTS);
+        const api : IBlogApi = blogApi()
 
-        const response: AxiosResponse<PostModel[]> = yield call(getPosts)
+        const response: AxiosResponse<PostModel[]> = yield call(api.getPosts)
 
         yield put(postRequestSuccess(response.data));
 

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Post from './post.component';
-import { PostsState } from './duck/reducer';
 import { IDispatchProps } from './posts.container';
+import { PostsState } from './duck/state';
 
 type Props = PostsState & IDispatchProps;
 

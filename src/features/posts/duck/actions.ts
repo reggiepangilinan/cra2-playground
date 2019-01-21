@@ -1,5 +1,5 @@
-import { PostModel } from './reducer';
 import { Action } from "redux";
+import { PostModel } from "./state";
 
 export enum actionTypes {
     POSTS_REQUEST = '@app/POSTS/REQUEST',

@@ -10,8 +10,8 @@ const Routes = () => {
     return (
         <Switch>
             <Route exact path="/" component={CounterContainer} />
-            <Route exact path="/posts" component={PostsContainer} />
-            <Route exact path="/post/:postId/comments" component={PostcommentsContainer} />
+            <Route exact path="/posts" component={PostsContainer} />>
+            <Route exact path="/posts/:postId/comments" component={PostcommentsContainer} />
             <Route exact path="/todos" component={TodosContainer} />
         </Switch>
     )

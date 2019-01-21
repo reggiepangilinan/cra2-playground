@@ -2,8 +2,8 @@ import { connect } from 'react-redux'
 import { AppState } from "../../redux/AppState";
 import { Dispatch } from 'redux';
 import { postCommentsRequest, postCommentsRequestFailure, postCommentsRequestSuccess } from './duck/actions';
-import { PostCommentsState, PostCommentModel } from './duck/reducer';
 import PostComments from './postcomments.component';
+import { PostCommentsState } from './duck/state';
 
 export interface IDispatchProps {
     postCommentsRequest: typeof postCommentsRequest,

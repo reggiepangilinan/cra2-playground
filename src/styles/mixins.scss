@@ -1,0 +1,23 @@
+// BREAKPOINTS
+$screen-phone: 767px;
+$screen-tablet: 768px;
+$screen-desktop: 992px;
+
+
+@mixin phone {
+    @media (max-width: #{$screen-phone}) {
+        @content;
+    }
+ }
+
+ @mixin tablet {
+    @media (min-width: #{$screen-tablet}) {
+        @content;
+    }
+ }
+
+ @mixin desktop {
+    @media (min-width: #{$screen-desktop}) {
+        @content;
+    }
+ }

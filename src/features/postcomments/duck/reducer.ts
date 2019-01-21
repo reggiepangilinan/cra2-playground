@@ -1,21 +1,7 @@
-import { PostCommentModel } from './reducer';
 
 import { actionTypes, IPostCommentsRequestAction } from './actions';
 import { Reducer } from 'redux';
-
-export type PostCommentsState = {
-    comments: PostCommentModel[],
-    error?: string,
-    requestPending: boolean
-};
-
-export type PostCommentModel = {
-    postId: number,
-    id: number,
-    name: string,
-    email: string,
-    body: string
-};
+import { PostCommentsState } from './state';
 
 const initialState: PostCommentsState = {
     comments: [],

@@ -1,5 +1,6 @@
-import { PostCommentModel } from './reducer';
+
 import { Action } from "redux";
+import { PostCommentModel } from "./state";
 
 export enum actionTypes {
     POST_COMMENTS_REQUEST = '@app/POST_COMMENTS/REQUEST',

@@ -1,5 +1,6 @@
-import { TodoModel } from './reducer';
+
 import { Action } from "redux";
+import { TodoModel } from "./state";
 
 export enum actionTypes {
     TODOS_REQUEST = '@app/TODOS/REQUEST',

@@ -1,21 +1,7 @@
 
 import { actionTypes, ITodosRequestAction } from './actions';
 import { Reducer } from 'redux';
-
-export type TodoModel = {
-    userId: number,
-    id: number,
-    title: string,
-    completed: boolean
-};
-
-export type TodosState = {
-    todos: TodoModel[],
-    error?: string,
-    requestPending: boolean
-};
-
-
+import { TodosState } from './state';
 
 const initialState: TodosState = {
     todos: [],

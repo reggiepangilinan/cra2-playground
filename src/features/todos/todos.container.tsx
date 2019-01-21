@@ -2,8 +2,8 @@ import { connect } from 'react-redux'
 import { AppState } from "../../redux/AppState";
 import { Dispatch } from 'redux';
 import { todosRequest } from './duck/actions';
-import { TodosState, TodoModel } from './duck/reducer';
 import Posts from './todos.component';
+import { TodosState } from './duck/state';
 
 export interface IDispatchProps {
     todosRequest: typeof todosRequest,

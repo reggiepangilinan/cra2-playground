@@ -3,7 +3,7 @@ import Counter from './counter.component';
 import { AppState } from "../../redux/AppState";
 import { Dispatch } from 'redux';
 import { counterIncrement, counterDecrement } from './duck/actions';
-import { CounterState } from './duck/reducer';
+import { CounterState } from './duck/state';
 
 export interface IDispatchProps {
   counterIncrement: typeof counterIncrement

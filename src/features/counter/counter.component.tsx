@@ -1,6 +1,6 @@
 import React from 'react'
 import { IDispatchProps, } from './counter.container';
-import { CounterState } from './duck/reducer';
+import { CounterState } from './duck/state';
 
 type Props = CounterState & IDispatchProps;
 

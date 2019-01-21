@@ -1,20 +1,9 @@
-import { PostModel } from './reducer';
+
 
 import { actionTypes, IPostRequestAction } from './actions';
 import { Reducer } from 'redux';
+import { PostsState } from './state';
 
-export type PostsState = {
-    posts: PostModel[],
-    error?: string,
-    requestPending: boolean
-};
-
-export type PostModel = {
-    userId: number,
-    id: number,
-    title: string,
-    body: string
-};
 
 const initialState: PostsState = {
     posts: [],

@@ -1,17 +1,17 @@
-import postsApi, { TODOS } from '../../../common/api/blogApi';
-import { TodoModel } from './reducer';
+
 import { actionTypes, ITodosRequestAction, todosRequestFailure, todosRequestSuccess, todosRequestPending } from './actions';
 import { put, takeLatest, call } from 'redux-saga/effects'
 import { SagaIterator } from 'redux-saga';
-import { AxiosPromise, AxiosResponse, AxiosError } from 'axios';
+import { AxiosResponse } from 'axios';
+import { TodoModel } from './state';
+import blogApi, { IBlogApi } from '../../../api/blogApi';
 
 function* fetchTodos(action: ITodosRequestAction) {
     try {
         yield put(todosRequestPending());
-
-        const getPosts = (): AxiosPromise<TodoModel[]> => postsApi.get(TODOS);
-
-        const response: AxiosResponse<TodoModel[]> = yield call(getPosts)
+ 
+        const api : IBlogApi = blogApi()
+        const response: AxiosResponse<TodoModel[]> = yield call(api.getTodos)
 
         yield put(todosRequestSuccess(response.data));
 

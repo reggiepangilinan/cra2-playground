@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Todo from './todo.component';
-import { TodosState } from './duck/reducer';
 import { IDispatchProps } from './todos.container';
+import { TodosState } from './duck/state';
 
 type Props = TodosState & IDispatchProps;
 

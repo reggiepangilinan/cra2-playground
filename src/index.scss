@@ -1,3 +1,5 @@
+@import './styles/mixins.scss';
+
 body {
   margin: 0;
   padding: 0;
@@ -8,6 +10,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
   width: 100%;
+
+  @include phone {
+    background-color: yellow;
+  }
+
+  @include tablet {
+    background-color: pink;
+  }
+
+  @include desktop {
+    background-color: gray;
+  }
 }
 
 code {

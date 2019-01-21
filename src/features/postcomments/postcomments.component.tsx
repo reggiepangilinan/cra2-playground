@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import { PostCommentsState } from './duck/reducer';
 import { IDispatchProps } from './postcomments.container';
 import { RouteComponentProps } from 'react-router-dom';
+import { PostCommentsState } from './duck/state';
 
 interface IMatchParams {
     postId: string;

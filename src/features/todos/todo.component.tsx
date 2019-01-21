@@ -1,5 +1,5 @@
 import React from 'react'
-import { TodoModel } from './duck/reducer';
+import { TodoModel } from './duck/state';
 
 type WithKey = {
     key: string

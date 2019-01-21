@@ -1,6 +1,6 @@
 import React from 'react'
-import { PostModel } from './duck/reducer';
 import { Link } from 'react-router-dom';
+import { PostModel } from './duck/state';
 
 type WithKey = {
     key: string
@@ -12,7 +12,7 @@ const Post = (props: Props) => {
         <div>
             <h4>{props.title}</h4>
             <p>{props.body}</p>
-            <Link to={`post/${props.id}/comments`}>Comments</Link>
+            <Link to={`posts/${props.id}/comments`}>Comments</Link>
         </div >
     )
 }
