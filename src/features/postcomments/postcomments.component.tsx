@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, FunctionComponent } from 'react'
 import { IDispatchProps } from './postcomments.container';
 import { RouteComponentProps } from 'react-router-dom';
 import { PostCommentsState } from './duck/state';
@@ -10,11 +10,13 @@ interface ILocalProps extends RouteComponentProps<IMatchParams> {
 }
 type Props = PostCommentsState & IDispatchProps & ILocalProps;
 
-const PostComments = (props: Props) => {
+const PostComments: FunctionComponent<Props> = (props: Props) => {
+
     useEffect(() => {
         console.log(props.match.params.postId);
         props.postCommentsRequest(parseInt(props.match.params.postId));
     }, [])
+
     return (
         <div>
             <h3>Post Comment</h3>

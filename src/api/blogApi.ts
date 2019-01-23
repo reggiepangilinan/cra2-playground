@@ -11,24 +11,6 @@ export const COMMENTS = 'comments';
 export const POSTS = 'posts';
 export const TODOS = 'todos';
 
-export interface IBlogApi {
-    getPostComments(postId: number | null | undefined): AxiosPromise<PostCommentModel[]>,
-    getPosts(): AxiosPromise<PostModel[]>
-    getTodos(): AxiosPromise<TodoModel[]>
-}
-
-class BlogApi implements IBlogApi {
-    getTodos(): AxiosPromise<TodoModel[]> {
-        return api.get(TODOS);
-    }
-    getPosts(): AxiosPromise<PostModel[]> {
-        return api.get(POSTS);
-    }
-    getPostComments(postId: number | null | undefined): AxiosPromise<PostCommentModel[]> {
-        return api.get(`${POSTS}/${postId}/${COMMENTS}`);
-    }
-};
-
-const blogApi = new BlogApi();
-
-export default (): IBlogApi => blogApi;
+export const getTodos = (): AxiosPromise<TodoModel[]> => api.get(TODOS);
+export const getPosts = (): AxiosPromise<PostModel[]> => api.get(POSTS);
+export const getPostComments = (postId: number | null | undefined): AxiosPromise<PostCommentModel[]> => api.get(`${POSTS}/${postId}/${COMMENTS}`);

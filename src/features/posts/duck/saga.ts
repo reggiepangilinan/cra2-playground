@@ -1,21 +1,16 @@
 
-import { actionTypes, IPostRequestAction, postRequestSuccess, postRequestFailure, postRequestPending } from './actions';
+import { actionTypes, postRequestSuccess, postRequestFailure } from './actions';
 import { put, takeLatest, call } from 'redux-saga/effects'
 import { SagaIterator } from 'redux-saga';
 import { AxiosResponse } from 'axios';
 import { PostModel } from './state';
-import blogApi, { IBlogApi } from '../../../api/blogApi';
+import { getPosts } from '../../../api/blogApi';
 
-function* fetchPosts(action: IPostRequestAction) {
+function* fetchPosts() {
     try {
-        yield put(postRequestPending());
-
-        const api : IBlogApi = blogApi()
-
-        const response: AxiosResponse<PostModel[]> = yield call(api.getPosts)
+        const response: AxiosResponse<PostModel[]> = yield call(getPosts)
 
         yield put(postRequestSuccess(response.data));
-
     } catch (e) {
         yield put(postRequestFailure(e.message));
     }

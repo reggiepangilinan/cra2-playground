@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { Link } from 'react-router-dom';
 import { PostModel } from './duck/state';
 
@@ -7,7 +7,7 @@ type WithKey = {
 }
 type Props = PostModel & WithKey;
 
-const Post = (props: Props) => {
+const Post: FunctionComponent<Props> = (props: Props) => {
     return (
         <div>
             <h4>{props.title}</h4>

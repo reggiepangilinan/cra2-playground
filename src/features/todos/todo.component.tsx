@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { TodoModel } from './duck/state';
 
 type WithKey = {
@@ -6,7 +6,7 @@ type WithKey = {
 }
 type Props = TodoModel & WithKey;
 
-const Post = (props: Props) => {
+const Post: FunctionComponent<Props> = (props: Props) => {
     return (
         <div>
             <h4>{props.title}</h4>

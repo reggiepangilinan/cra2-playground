@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, FunctionComponent } from 'react'
 import Todo from './todo.component';
 import { IDispatchProps } from './todos.container';
 import { TodosState } from './duck/state';
 
 type Props = TodosState & IDispatchProps;
 
-const Todos = (props: Props) => {
+const Todos: FunctionComponent<Props> = (props: Props) => {
     useEffect(() => {
         props.todosRequest();
     }, [])

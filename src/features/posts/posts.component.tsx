@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, FunctionComponent } from 'react'
 import Post from './post.component';
 import { IDispatchProps } from './posts.container';
 import { PostsState } from './duck/state';
 
 type Props = PostsState & IDispatchProps;
 
-const Posts = (props: Props) => {
+const Posts: FunctionComponent<Props> = (props: Props) => {
     useEffect(() => {
         props.postRequest();
     }, [])

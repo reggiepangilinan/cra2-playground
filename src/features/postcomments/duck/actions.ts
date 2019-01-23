@@ -4,7 +4,6 @@ import { PostCommentModel } from "./state";
 
 export enum actionTypes {
     POST_COMMENTS_REQUEST = '@app/POST_COMMENTS/REQUEST',
-    POST_COMMENTS_REQUEST_PENDING = '@app/POST_COMMENTS/REQUEST_PENDING',
     POST_COMMENTS_REQUEST_SUCCESS = '@app/POST_COMMENTS/REQUEST_SUCCESS',
     POST_COMMENTS_REQUEST_FAILURE = '@app/POST_COMMENTS/REQUEST_FAILURE',
 }
@@ -18,10 +17,6 @@ export interface IPostCommentsRequestAction extends Action {
 export const postCommentsRequest = (postId: number): IPostCommentsRequestAction => ({
     type: actionTypes.POST_COMMENTS_REQUEST,
     postId
-});
-
-export const postCommentsRequestPending = (): IPostCommentsRequestAction => ({
-    type: actionTypes.POST_COMMENTS_REQUEST_PENDING,
 });
 
 export const postCommentsRequestSuccess = (comments: PostCommentModel[]): IPostCommentsRequestAction => ({

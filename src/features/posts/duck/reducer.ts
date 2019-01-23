@@ -16,7 +16,7 @@ const postsReducer: Reducer<PostsState, IPostRequestAction> = (
 ) => {
     switch (action.type) {
 
-        case actionTypes.POSTS_REQUEST_PENDING:
+        case actionTypes.POSTS_REQUEST:
             return Object.assign({}, state, <PostsState>({
                 requestPending: true
             }));
