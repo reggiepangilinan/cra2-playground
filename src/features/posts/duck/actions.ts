@@ -5,6 +5,8 @@ export enum actionTypes {
     POSTS_REQUEST = '@app/POSTS/REQUEST',
     POSTS_REQUEST_SUCCESS = '@app/POSTS/REQUEST_SUCCESS',
     POSTS_REQUEST_FAILURE = '@app/POSTS/REQUEST_FAILURE',
+
+    POSTS_CLEANUP = '@app/POSTS/CLEANUP',
 }
 
 export interface IPostRequestAction extends Action {
@@ -15,6 +17,12 @@ export interface IPostRequestAction extends Action {
 export const postRequest = (): IPostRequestAction => ({
     type: actionTypes.POSTS_REQUEST,
 });
+
+
+export const postCleanup = (): IPostRequestAction => ({
+    type: actionTypes.POSTS_CLEANUP,
+});
+
 
 export const postRequestSuccess = (posts: PostModel[]): IPostRequestAction => ({
     type: actionTypes.POSTS_REQUEST_SUCCESS,

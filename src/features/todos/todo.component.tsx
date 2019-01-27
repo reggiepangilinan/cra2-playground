@@ -6,7 +6,7 @@ type WithKey = {
 }
 type Props = TodoModel & WithKey;
 
-const Post: FunctionComponent<Props> = (props: Props) => {
+const Todo: FunctionComponent<Props> = (props: Props) => {
     return (
         <div>
             <h4>{props.title}</h4>
@@ -15,4 +15,4 @@ const Post: FunctionComponent<Props> = (props: Props) => {
     )
 }
 
-export default Post
+export default Todo

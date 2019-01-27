@@ -31,6 +31,9 @@ const postCommentsReducer: Reducer<PostCommentsState, IPostCommentsRequestAction
                 error: action.error
             }));
 
+            case actionTypes.POST_COMMENTS_CLEANUP:
+            return Object.assign({}, state, <PostCommentsState>(initialState));
+
         default:
             return state;
     }

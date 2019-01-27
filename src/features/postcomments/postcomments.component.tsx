@@ -7,7 +7,9 @@ interface IMatchParams {
     postId: string;
 }
 interface ILocalProps extends RouteComponentProps<IMatchParams> {
+
 }
+
 type Props = PostCommentsState & IDispatchProps & ILocalProps;
 
 const PostComments: FunctionComponent<Props> = (props: Props) => {
@@ -15,6 +17,7 @@ const PostComments: FunctionComponent<Props> = (props: Props) => {
     useEffect(() => {
         console.log(props.match.params.postId);
         props.postCommentsRequest(parseInt(props.match.params.postId));
+        return () => props.postCommentsCleanup();
     }, [])
 
     return (

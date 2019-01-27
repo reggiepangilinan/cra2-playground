@@ -31,6 +31,9 @@ const postsReducer: Reducer<TodosState, ITodosRequestAction> = (
                 error: action.error
             }));
 
+        case actionTypes.TODOS_CLEANUP:
+            return Object.assign({}, state, <TodosState>(initialState));
+
         default:
             return state;
     }

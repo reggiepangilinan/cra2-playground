@@ -1,0 +1,10 @@
+.tile {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: all .2s ease-in-out;
+}
+
+.tile:hover {
+    transform: scale(1.1);
+}

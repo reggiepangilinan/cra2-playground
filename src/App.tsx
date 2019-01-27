@@ -13,12 +13,15 @@ const App = () => {
         <Desktop>
           Desktop
         </Desktop>
+        
         <Tablet>
           Tablet
         </Tablet>
+
         <Phone>
           Phone
         </Phone>
+        
         <br></br>
         <br></br>
 
@@ -26,6 +29,7 @@ const App = () => {
           <NavLink to="/" activeClassName={styles.activeLink} exact>Counter</NavLink>
           <NavLink to="/posts" activeClassName={styles.activeLink}>Posts</NavLink>
           <NavLink to="/todos" activeClassName={styles.activeLink} exact>Todos</NavLink>
+          <NavLink to="/users" activeClassName={styles.activeLink} exact>Users</NavLink>
         </nav>
         <Routes />
       </div>

@@ -6,6 +6,7 @@ export enum actionTypes {
     TODOS_REQUEST = '@app/TODOS/REQUEST',
     TODOS_REQUEST_SUCCESS = '@app/TODOS/REQUEST_SUCCESS',
     TODOS_REQUEST_FAILURE = '@app/TODOS/REQUEST_FAILURE',
+    TODOS_CLEANUP = '@app/TODOS/CLEANUP',
 }
 
 export interface ITodosRequestAction extends Action {
@@ -27,3 +28,6 @@ export const todosRequestFailure = (error: string): ITodosRequestAction => ({
     error
 });
 
+export const todosCleanup = (): ITodosRequestAction => ({
+    type: actionTypes.TODOS_CLEANUP,
+});

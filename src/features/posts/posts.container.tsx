@@ -1,12 +1,13 @@
 import { connect } from 'react-redux'
 import { AppState } from "../../redux/AppState";
 import { Dispatch } from 'redux';
-import { postRequest, postRequestFailure, postRequestSuccess } from './duck/actions';
+import { postRequest, postCleanup } from './duck/actions';
 import Posts from './posts.component';
 import { PostsState } from './duck/state';
 
 export interface IDispatchProps {
     postRequest: typeof postRequest,
+    postCleanup: typeof postCleanup
 }
 
 const mapStateToProps = (state: AppState): PostsState =>
@@ -15,7 +16,8 @@ const mapStateToProps = (state: AppState): PostsState =>
 
 const mapDispatchToProps = (dispatch: Dispatch): IDispatchProps => {
     return {
-        postRequest: () => dispatch(postRequest())
+        postRequest: () => dispatch(postRequest()),
+        postCleanup: () => dispatch(postCleanup()),
     }
 }
 

@@ -18,7 +18,8 @@ const postsReducer: Reducer<PostsState, IPostRequestAction> = (
 
         case actionTypes.POSTS_REQUEST:
             return Object.assign({}, state, <PostsState>({
-                requestPending: true
+                requestPending: true,
+                posts: []
             }));
 
         case actionTypes.POSTS_REQUEST_SUCCESS:
@@ -32,6 +33,9 @@ const postsReducer: Reducer<PostsState, IPostRequestAction> = (
                 requestPending: false,
                 error: action.error
             }));
+
+        case actionTypes.POSTS_CLEANUP:
+            return Object.assign({}, state, <PostsState>(initialState));
 
         default:
             return state;

@@ -1,5 +1,13 @@
+@import './styles/mixins.scss';
+
+
 .container {
   padding: 50px;
+
+  @include phone {
+    padding: 20px;
+  }
+
 }
 .menu {
   a {

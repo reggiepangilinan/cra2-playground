@@ -29,7 +29,6 @@ const Counter: FunctionComponent<Props> = (props: Props) => {
         </div>)
 }
 
-
 const NestedComponentReusingHook: FunctionComponent = () => {
 
     const { count, setValue } = useCounterValue(10);

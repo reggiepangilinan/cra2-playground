@@ -24,6 +24,15 @@ body {
   }
 }
 
+button {
+  width: 50px;
+  background-color: gainsboro;
+  height: 30px;
+  margin: 5px;
+  border-radius: 30px;
+  border: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

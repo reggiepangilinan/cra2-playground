@@ -8,7 +8,8 @@ type Props = TodosState & IDispatchProps;
 const Todos: FunctionComponent<Props> = (props: Props) => {
     useEffect(() => {
         props.todosRequest();
-    }, [])
+        return ()=> props.todosCleanup();
+    },[])
     return (
         <div>
             <h3>Todos</h3>

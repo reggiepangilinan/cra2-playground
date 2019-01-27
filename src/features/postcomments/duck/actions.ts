@@ -6,6 +6,7 @@ export enum actionTypes {
     POST_COMMENTS_REQUEST = '@app/POST_COMMENTS/REQUEST',
     POST_COMMENTS_REQUEST_SUCCESS = '@app/POST_COMMENTS/REQUEST_SUCCESS',
     POST_COMMENTS_REQUEST_FAILURE = '@app/POST_COMMENTS/REQUEST_FAILURE',
+    POST_COMMENTS_CLEANUP = '@app/POST_COMMENTS/CLEANUP',
 }
 
 export interface IPostCommentsRequestAction extends Action {
@@ -27,5 +28,9 @@ export const postCommentsRequestSuccess = (comments: PostCommentModel[]): IPostC
 export const postCommentsRequestFailure = (error: string): IPostCommentsRequestAction => ({
     type: actionTypes.POST_COMMENTS_REQUEST_FAILURE,
     error
+});
+
+export const postCommentsCleanup = (): IPostCommentsRequestAction => ({
+    type: actionTypes.POST_COMMENTS_CLEANUP,
 });
 
