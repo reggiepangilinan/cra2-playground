@@ -30,6 +30,7 @@ const App = () => {
           <NavLink to="/posts" activeClassName={styles.activeLink}>Posts</NavLink>
           <NavLink to="/todos" activeClassName={styles.activeLink} exact>Todos</NavLink>
           <NavLink to="/users" activeClassName={styles.activeLink} exact>Users</NavLink>
+          <NavLink to="/sampleform" activeClassName={styles.activeLink} exact>Sample Form</NavLink>
         </nav>
         <Routes />
       </div>

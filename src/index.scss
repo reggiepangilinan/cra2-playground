@@ -20,13 +20,13 @@ body {
   }
 
   @include desktop {
-    background-color: gray;
+    background-color:gainsboro;
   }
 }
 
 button {
   width: 50px;
-  background-color: gainsboro;
+  background-color: whitesmoke;
   height: 30px;
   margin: 5px;
   border-radius: 30px;

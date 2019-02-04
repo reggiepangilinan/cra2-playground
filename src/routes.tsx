@@ -7,8 +7,8 @@ const CounterContainer = () => import('./features/counter/counter.container');
 const PostsContainer = () => import('./features/posts/posts.container');
 const PostcommentsContainer = () => import('./features/postcomments/postcomments.container');
 const TodosContainer = () => import('./features/todos/todos.container');
-
 const UsersComponent = () => import('./features/users/users.component');
+const SampleFormComponent = () => import('./features/sampleform/sampleform.component');
 
 const Routes = () => {
     return (
@@ -18,7 +18,9 @@ const Routes = () => {
             <Route exact path="/posts/:postId/comments" component={AsyncComponent(PostcommentsContainer)} />
             <Route exact path="/todos" component={AsyncComponent(TodosContainer)} />
             <Route exact path="/users" component={AsyncComponent(UsersComponent)} />
-        </Switch>);
+            <Route exact path="/sampleform" component={AsyncComponent(SampleFormComponent)} />
+        </Switch>
+        );
 }
 
 export default Routes
