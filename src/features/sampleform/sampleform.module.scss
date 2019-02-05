@@ -1,0 +1,15 @@
+@import '../../styles/mixins.scss';
+
+
+.sampleForm {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.fieldGroupInput {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 300px;
+}

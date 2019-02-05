@@ -12,6 +12,7 @@
     "@types/react-redux": "^6.0.12",
     "@types/react-responsive": "^3.0.2",
     "@types/react-router-dom": "^4.3.1",
+    "@types/yup": "^0.26.7",
     "axios": "0.18.0",
     "formik": "^1.4.3",
     "lodash": "^4.17.11",
@@ -26,7 +27,8 @@
     "react-spring": "^7.2.10",
     "redux": "4.0.1",
     "redux-saga": "0.16.2",
-    "typescript": "3.2.2"
+    "typescript": "3.2.2",
+    "yup": "^0.26.10"
   },
   "scripts": {
     "start": "react-scripts start",
