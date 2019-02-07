@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import { Formik, FormikProps, Form, Field, FieldProps } from 'formik';
 import styles from './sampleform.module.scss';
-import {string, object } from 'yup'
+import {string, object, bool } from 'yup'
 
 type Props = {
 
@@ -10,7 +10,7 @@ type Props = {
 export type SampleFormModel = {
   name: string,
   email: string,
-  sendMeUpdates: boolean
+  isAgreed: boolean
 };
 
 const handleSubmit = (values: SampleFormModel) => {
@@ -20,6 +20,7 @@ const handleSubmit = (values: SampleFormModel) => {
 const validatonSchema = object().shape({
   name: string().min(9, 'Name must be 9 characters or longer').required('Name is required'),
   email: string().email('Email not valid').required('Email is required'),
+  isAgreed: bool().oneOf([true], "You must agree")
 });
 
 const SampleForm: FunctionComponent<Props> = () => {
@@ -27,7 +28,7 @@ const SampleForm: FunctionComponent<Props> = () => {
     <div>
       <h3>Sample form</h3>
       <Formik
-        initialValues={{ name: '', email: '', sendMeUpdates: false }}
+        initialValues={{ name: '', email: '', isAgreed: false }}
         onSubmit={handleSubmit}
         validationSchema={validatonSchema}
         render={({ touched, errors, values, submitForm }: FormikProps<SampleFormModel>) => (
@@ -36,20 +37,23 @@ const SampleForm: FunctionComponent<Props> = () => {
             <div className={styles.fieldGroupInput}>
               <label>Name</label>
               <Field name="name" placeholder="Name" type="text" />
-              { touched.name && errors.name && <small>{errors.name}</small> }
+              { touched.name 
+                && errors.name 
+                && <small style={{color: 'red'}}>{errors.name}</small> }
               
             </div>
 
             <div className={styles.fieldGroupInput}>
               <label>Email</label>
               <Field name="email" placeholder="Email" type="email" />
-              { touched.email && errors.email && <small>{errors.email}</small> }
+              { touched.email && errors.email && <small style={{color: 'red'}}>{errors.email}</small> }
             </div>
-
-            <label>
-              <Field name="sendMeUpdates" type="checkbox" checked={values.sendMeUpdates} />
-              Send me updates
+            
+            <label style={{display: 'flex'}}>
+              <Field name="isAgreed" type="checkbox" checked={values.isAgreed} style={{marginRight: '10px'}} label="I agree"/>
+              I agree
             </label>
+            { touched.isAgreed && errors.isAgreed && <small style={{color: 'red'}}>{errors.isAgreed}</small> }
             <button type="submit" onClick={()=> submitForm()}>Submit</button>
           </Form>
         )}
