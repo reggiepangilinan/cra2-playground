@@ -13,11 +13,13 @@ interface ILocalProps extends RouteComponentProps<IMatchParams> {
 type Props = PostCommentsState & IDispatchProps & ILocalProps;
 
 const PostComments: FunctionComponent<Props> = (props: Props) => {
-
     useEffect(() => {
         props.postCommentsRequest(parseInt(props.match.params.postId));
-        return () => props.postCommentsCleanup();
-    }, [])
+
+        return () => {
+            props.postCommentsCleanup()
+        }
+    }, []);
 
     return (
         <div>

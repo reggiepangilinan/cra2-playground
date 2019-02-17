@@ -9,13 +9,15 @@ type Props = PostsState & IDispatchProps;
 const Posts: FunctionComponent<Props> = (props: Props) => {
     useEffect(() => {
         props.postRequest();
-        return () => props.postCleanup()
+        return () => {
+            props.postCleanup();
+        }
     }, [])
     return (
         <div>
             <h3>Posts</h3>
             {
-                props.requestPending ? 
+                props.requestPending ?
                     'Loading...'
                     :
                     props.posts.map(p => <Post key={p.id.toString()} {...p} />)
