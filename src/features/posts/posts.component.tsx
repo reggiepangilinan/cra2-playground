@@ -1,5 +1,4 @@
 import React, { useEffect, FunctionComponent } from 'react'
-import { isEmpty } from 'lodash/fp';
 import Post from './post.component';
 import { IDispatchProps } from './posts.container';
 import { PostsState } from './duck/state';
