@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './App.module.scss';
 import Routes from './routes';
 import { NavLink, BrowserRouter } from 'react-router-dom';
-import { Desktop, Tablet, Phone } from './styles/breakPoints';
+import { Desktop, Tablet, Phone } from './common/components/Breakpoints';
 import { ThemeContext } from './common/context/theme';
 
 
