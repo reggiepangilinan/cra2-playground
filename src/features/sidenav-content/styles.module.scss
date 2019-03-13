@@ -6,10 +6,47 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
+    font-size: 0.9em;
 }
 
 .buttonWrapper {
     position: absolute;
     top: 10px;
     right: 10px;
+}
+
+
+.navGroup {
+    margin-left: 10px;
+    color: $text-color-white; 
+}
+
+
+
+.navLinksWrapper {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    a {
+        color: $text-color-white;
+        text-decoration: none;
+        margin: 5px;
+        padding-left: 30px;
+        height: 30px;
+        vertical-align: middle;
+        line-height: 30px;
+        &:hover {
+            background-color: darken($secondary-bg-color, 3%);
+        }
+    }
+}
+
+.activeNavLink {
+    border-left: 4px solid $accent-color;
+    background-color: darken($secondary-bg-color, 7%);
+    font-weight: 500;
+    @include fadein;
 }

@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+import "material-design-icons/iconfont/material-icons.css";
 type Props = {
     name: string
 };

@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 import { ButtonType } from "../../types";
+import "material-design-icons/iconfont/material-icons.css";
 
 type Props = {
     name: string,
