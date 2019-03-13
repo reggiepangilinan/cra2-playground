@@ -1,0 +1,17 @@
+@import '../../common/styles/variables.scss';
+@import '../../common/styles/mixins.scss';
+@import '../../common/styles/animations.scss';
+
+.main {
+  @include fadein;
+  z-index: 1;
+  margin-top: 50px;
+  padding: 10px 15px;
+
+  @include desktop {
+    margin-left: $sidenav-desktop-width;
+  }
+  @include phone {
+    padding: 10px;
+  }
+}

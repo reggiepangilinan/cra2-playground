@@ -5,8 +5,12 @@ $breakpoint-desktop: 992px !default;
 
 //COLOURS
 $primary-text-color: #222 !default;
-$secondary-text-color: #222 !default;
+$secondary-text-color: #3B5574 !default;
 $primary-bg-color: #fff !default;
 $secondary-bg-color: #222 !default;
-$accent-color : #222 !default;
-$shadow-color: #222 !default;
+$accent-color : #FF5050 !default;
+$shadow-color: rgba(163, 163, 163, 0.25) !default;
+
+//SIZES
+$header-height: 60px !default;
+$sidenav-desktop-width: 270px !default;

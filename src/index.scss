@@ -10,34 +10,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
   width: 100%;
-
-  @include phone {
-    background-color: yellow;
-  }
-
-  @include tablet {
-    background-color: pink;
-  }
-
-  @include desktop {
-    background-color:gainsboro;
-  }
-}
-
-input[type=password],
-input[type=email],
-input[type=text] {
-  font-size: 16px;
-  padding: 5px;
-}
-
-button {
-  width: 50px;
-  background-color: whitesmoke;
-  height: 30px;
-  margin: 5px;
-  border-radius: 30px;
-  border: none;
 }
 
 code {

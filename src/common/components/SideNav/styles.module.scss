@@ -1,0 +1,27 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+@mixin sidenav-base() {
+  top: 0;
+  left: -100%;
+  background-color: $secondary-bg-color;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 2;
+  transition: all 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  @include desktop {
+    width: $sidenav-desktop-width;
+  }
+}
+
+.navShown {
+  @include sidenav-base();
+  left: 0;
+}
+
+.navHidden {
+  @include sidenav-base();
+  left: -100%;
+}
