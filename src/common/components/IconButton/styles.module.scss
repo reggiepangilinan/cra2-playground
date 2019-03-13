@@ -4,14 +4,14 @@
 
 .iconButtonDark {
   @include button-base($secondary-bg-color);
-  color: #fff;
+  color: $text-color-white;
   text-align: center;
   height: 40px;
   width: 40px;
 }
 
 .iconButtonLight {
-  @include button-base();
+  @include button-base($primary-bg-color);
   color: $primary-text-color;
   text-align: center;
   height: 40px;
