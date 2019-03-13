@@ -9,4 +9,7 @@
   height: $header-height;
   background: $primary-bg-color;
   box-shadow: 0px 4px 9px $shadow-color;
+  @include desktop {
+    margin-left: $sidenav-desktop-width;
+  }
 }

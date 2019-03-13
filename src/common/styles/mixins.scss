@@ -17,3 +17,19 @@
     @content;
   }
 }
+
+
+
+@mixin button-base($bgcolor : transparent) {
+  
+  background-color: $bgcolor;
+  border:none;
+  outline:none;
+  &:hover {
+      background:darken($bgcolor,8%);
+      transition: all 0.3s ease;
+    }
+  &:active {
+      background:darken($bgcolor,25%);
+  } 
+}

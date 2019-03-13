@@ -6,22 +6,32 @@ import { Desktop, Tablet, Phone } from '../../common/components/Breakpoints';
 import { ThemeContext } from '../../common/context/theme';
 import Header from '../../common/components/Header';
 import SideNav from '../../common/components/SideNav';
-import SideNavToggleHandler from '../../common/components/SideNavToggleHandler';
+import SideNavToggleProvider from '../../common/components/SideNavToggleProvider';
+import HeaderContent from '../header-content/HeaderContent';
+import SideNavContent from '../sidenav-content/SideNavContent';
+
 
 
 const App = () => {
   const [theme, setTheme] = useState({ current: 'default' });
-
   return (
     <BrowserRouter>
       <>
-        <Header />
-        <SideNav />
+        <SideNavToggleProvider>
+          <Header>
+            <HeaderContent />
+          </Header>
+          <SideNav>
+            <SideNavContent />
+          </SideNav>
+        </SideNavToggleProvider>
+
         <main className={styles.main}>
           <Switch>
-            {/* <Routes /> */}
+            <Routes />
           </Switch>
         </main>
+
       </>
     </BrowserRouter>
   );

@@ -1,0 +1,19 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/animations.scss";
+
+.iconButtonDark {
+  @include button-base($secondary-bg-color);
+  color: #fff;
+  text-align: center;
+  height: 40px;
+  width: 40px;
+}
+
+.iconButtonLight {
+  @include button-base();
+  color: $primary-text-color;
+  text-align: center;
+  height: 40px;
+  width: 40px;
+}
