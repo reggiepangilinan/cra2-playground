@@ -4,6 +4,7 @@
 .sampleForm {
   display: flex;
   flex-direction: column;
+  width: 40%;
 }
 
 
@@ -12,4 +13,11 @@
   flex-direction: column;
   margin-bottom: 10px;
   width: 300px;
+}
+
+
+.textField {
+  height: 20px;
+  padding: 5px;
+  font-size: 16px;
 }

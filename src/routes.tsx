@@ -12,6 +12,7 @@ const SampleFormComponent = () => import('./features/patterns/sampleform/samplef
 
 
 const ButtonsComponent = () => import('./features/ui-toolkit/buttons');
+const InputsComponent = () => import('./features/ui-toolkit/inputs');
 
 const Routes = () => {
     return (
@@ -24,6 +25,7 @@ const Routes = () => {
             <Route exact path="/sampleform" component={AsyncComponent(SampleFormComponent)} />
 
             <Route exact path="/ui-toolkit/buttons" component={AsyncComponent(ButtonsComponent)} />
+            <Route exact path="/ui-toolkit/inputs" component={AsyncComponent(InputsComponent)} />
         </Switch>
     );
 }

@@ -1,0 +1,27 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.formFieldGroup {
+
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 0.9em;
+    }
+
+    input {
+        background-color: darken($primary-bg-color, 5%);
+        font-size: 16px;
+        margin: 5px 0px;
+        padding: 10px 8px;
+        height: 20px;
+        border: none;
+    }
+
+    small {
+        color : $text-color-error;
+    }
+    margin-bottom: 30px;
+}
+
