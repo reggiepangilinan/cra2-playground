@@ -15,6 +15,9 @@ $secondary-bg-color: #373737 !default;
 $accent-color : #FFBA35 !default;
 $shadow-color: rgba(163, 163, 163, 0.25) !default;
 
+
+$text-input-focus-color: darken($primary-bg-color, 40%);
+
 $primary-button-color: #333 !default;
 $secondary-button-color: #FFBA35 !default;
 $danger-button-color: #FF5050 !default;

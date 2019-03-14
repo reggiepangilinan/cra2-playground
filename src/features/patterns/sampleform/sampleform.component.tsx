@@ -13,7 +13,8 @@ type Props = {
 export type SampleFormModel = {
   name: string,
   email: string,
-  isAgreed: boolean
+  isAgreed: boolean,
+  password: string
 };
 
 const handleSubmit = (values: SampleFormModel) => {
@@ -23,6 +24,7 @@ const handleSubmit = (values: SampleFormModel) => {
 const validatonSchema = object().shape({
   name: string().min(9, 'Name must be 9 characters or longer').required('Name is required'),
   email: string().email('Email not valid').required('Email is required'),
+  password: string().min(9, 'Password must be 9 characters or longer').required('Password is required'),
   isAgreed: bool().oneOf([true], "You must agree")
 });
 
@@ -31,7 +33,7 @@ const SampleForm: FunctionComponent<Props> = () => {
     <div>
       <h3>Sample form</h3>
       <Formik
-        initialValues={{ name: '', email: '', isAgreed: false }}
+        initialValues={{ name: '', email: '', isAgreed: false, password: '' }}
         onSubmit={handleSubmit}
         validationSchema={validatonSchema}
         render={({ touched, errors, values, submitForm }: FormikProps<SampleFormModel>) => (
@@ -52,6 +54,14 @@ const SampleForm: FunctionComponent<Props> = () => {
               type="email"
               touched={touched.email}
               error={errors.email}
+            />
+
+            <FormField name="password"
+              label="Password"
+              placeholder="Password"
+              type="password"
+              touched={touched.password}
+              error={errors.password}
             />
 
 

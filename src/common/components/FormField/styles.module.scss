@@ -2,26 +2,28 @@
 @import "../../styles/variables.scss";
 
 .formFieldGroup {
-
     display: flex;
     flex-direction: column;
-
     label {
         font-size: 0.9em;
+        margin-left: 5px;
     }
-
+    .labelError {
+        color : $text-color-error;
+    }
     input {
-        background-color: darken($primary-bg-color, 5%);
+        color: $primary-text-color;
+        background-color: darken($primary-bg-color, 3%);
         font-size: 16px;
         margin: 5px 0px;
         padding: 10px 8px;
         height: 20px;
-        border: none;
+        border: 1px solid darken($primary-bg-color, 7%);
+        &:focus {
+            outline: none;            
+            border: 1px solid $text-input-focus-color;
+        }
     }
-
-    small {
-        color : $text-color-error;
-    }
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
