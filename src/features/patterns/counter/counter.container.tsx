@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Counter from './counter.component';
-import { AppState } from "../../redux/AppState";
+import { AppState } from "../../../redux/AppState";
 import { Dispatch } from 'redux';
 import { counterIncrement, counterDecrement } from './duck/actions';
 import { CounterState } from './duck/state';

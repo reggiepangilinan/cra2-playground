@@ -3,12 +3,12 @@ import { Route, Switch } from 'react-router-dom';
 import React from 'react'
 import AsyncComponent from './common/components/AsyncComponent';
 
-const CounterContainer = () => import('./features/counter/counter.container');
-const PostsContainer = () => import('./features/posts/posts.container');
-const PostcommentsContainer = () => import('./features/postcomments/postcomments.container');
-const TodosContainer = () => import('./features/todos/todos.container');
-const UsersComponent = () => import('./features/users/users.component');
-const SampleFormComponent = () => import('./features/sampleform/sampleform.component');
+const CounterContainer = () => import('./features/patterns/counter/counter.container');
+const PostsContainer = () => import('./features/patterns/posts/posts.container');
+const PostcommentsContainer = () => import('./features/patterns/postcomments/postcomments.container');
+const TodosContainer = () => import('./features/patterns/todos/todos.container');
+const UsersComponent = () => import('./features/patterns/users/users.component');
+const SampleFormComponent = () => import('./features/patterns/sampleform/sampleform.component');
 
 const Routes = () => {
     return (
@@ -20,7 +20,7 @@ const Routes = () => {
             <Route exact path="/users" component={AsyncComponent(UsersComponent)} />
             <Route exact path="/sampleform" component={AsyncComponent(SampleFormComponent)} />
         </Switch>
-        );
+    );
 }
 
 export default Routes

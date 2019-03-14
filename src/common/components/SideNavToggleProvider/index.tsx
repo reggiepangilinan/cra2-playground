@@ -1,6 +1,7 @@
 import React, { FunctionComponent, ReactNode, createContext, useState } from "react";
 import MediaQuery from "react-responsive";
 import { minDesktopWidth } from '../Breakpoints';
+import { WithChildren } from "../../types";
 
 
 type SideNavToggleContextState = {
@@ -9,8 +10,8 @@ type SideNavToggleContextState = {
 }
 
 type Props = {
-    children: ReactNode
-}
+
+} & WithChildren
 
 const defaultContextValue: SideNavToggleContextState = { shown: false }
 

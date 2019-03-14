@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { UserModel } from "../models";
-import { getUsers } from "../../../api/blogApi";
+import { getUsers } from "../../../../api/blogApi";
 import { AxiosError } from "axios";
 
 export const useUsersState = (initialValue: UserModel[]) => {

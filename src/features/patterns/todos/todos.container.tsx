@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { AppState } from "../../redux/AppState";
+import { AppState } from "../../../redux/AppState";
 import { Dispatch } from 'redux';
 import { todosRequest, todosCleanup } from './duck/actions';
 import Todos from './todos.component';

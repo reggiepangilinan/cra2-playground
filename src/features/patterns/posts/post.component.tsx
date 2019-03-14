@@ -2,7 +2,7 @@ import React, { FunctionComponent, useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { PostModel } from './duck/state';
 import styles from './post.module.scss';
-import { ThemeContext } from '../../common/context/theme';
+import { ThemeContext } from '../../../common/context/theme';
 
 type WithKey = {
     key: string

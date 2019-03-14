@@ -4,7 +4,8 @@ import { put, takeLatest, call } from 'redux-saga/effects'
 import { SagaIterator } from 'redux-saga';
 import { AxiosResponse } from 'axios';
 import { PostCommentModel } from './state';
-import { getPostComments } from '../../../api/blogApi';
+import { getPostComments } from '../../../../api/blogApi';
+
 
 function* fetchPostComments(action: IPostCommentsRequestAction) {
     try {

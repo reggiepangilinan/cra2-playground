@@ -1,6 +1,6 @@
-import postsSaga from "../features/posts/duck/saga";
-import todosSaga from "../features/todos/duck/saga";
-import postCommentsSaga from "../features/postcomments/duck/saga";
+import postsSaga from "../features/patterns/posts/duck/saga";
+import todosSaga from "../features/patterns/todos/duck/saga";
+import postCommentsSaga from "../features/patterns/postcomments/duck/saga";
 import { fork, all } from "redux-saga/effects";
 
 export default function* () {

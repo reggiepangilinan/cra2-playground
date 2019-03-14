@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { AppState } from "../../redux/AppState";
+import { AppState } from "../../../redux/AppState";
 import { Dispatch } from 'redux';
 import { postCommentsRequest, postCommentsCleanup } from './duck/actions';
 import PostComments from './postcomments.component';

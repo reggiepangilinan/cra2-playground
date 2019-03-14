@@ -1,10 +1,11 @@
 import React, { FunctionComponent, ReactNode } from "react";
 import styles from './styles.module.scss';
 import useSideNavToggle from "../SideNavToggleProvider/useSideNavToggle";
+import { WithChildren } from "../../types";
 
 type Props = {
-    children: ReactNode
-}
+
+} & WithChildren
 
 const SideNav: FunctionComponent<Props> = (props: Props) => {
     const { shown } = useSideNavToggle();

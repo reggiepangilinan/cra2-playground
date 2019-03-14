@@ -1,8 +1,8 @@
 import axios, { AxiosInstance, AxiosPromise } from 'axios';
-import { PostCommentModel } from '../features/postcomments/duck/state';
-import { PostModel } from '../features/posts/duck/state';
-import { TodoModel } from '../features/todos/duck/state';
-import { UserModel } from '../features/users/models';
+import { PostCommentModel } from '../features/patterns/postcomments/duck/state';
+import { PostModel } from '../features/patterns/posts/duck/state';
+import { TodoModel } from '../features/patterns/todos/duck/state';
+import { UserModel } from '../features/patterns/users/models';
 
 const api: AxiosInstance = axios.create({
     baseURL: process.env.REACT_APP_BLOG_API_URL
