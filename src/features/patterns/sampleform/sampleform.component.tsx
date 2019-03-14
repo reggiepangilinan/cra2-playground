@@ -2,6 +2,8 @@ import React, { FunctionComponent } from 'react'
 import { Formik, FormikProps, Form, Field, FieldProps } from 'formik';
 import styles from './sampleform.module.scss';
 import {string, object, bool } from 'yup'
+import Button from '../../../common/components/Button';
+import { ButtonKind } from '../../../common/types';
 
 type Props = {
 
@@ -54,7 +56,7 @@ const SampleForm: FunctionComponent<Props> = () => {
               I agree
             </label>
             { touched.isAgreed && errors.isAgreed && <small style={{color: 'red'}}>{errors.isAgreed}</small> }
-            <button type="submit" onClick={()=> submitForm()}>Submit</button>
+            <Button type="submit" onClick={()=> submitForm()} kind={ButtonKind.Primary} text="Submit"/>
           </Form>
         )}
       />

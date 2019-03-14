@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 import useSideNavToggle from '../../common/components/SideNavToggleProvider/useSideNavToggle';
 import IconButton from '../../common/components/IconButton';
 import { TabletAndSmaller } from '../../common/components/Breakpoints';
-import { IconButtonType } from '../../common/types';
+import { IconButtonKind } from '../../common/types';
 import { NavLink } from 'react-router-dom';
 
 type Props = {
@@ -18,7 +18,7 @@ const SideNavContent: FunctionComponent<Props> = () => {
 
       <TabletAndSmaller>
         <div className={styles.buttonWrapper}>
-          <IconButton type={IconButtonType.Dark} name="close" onClick={toggleNav} />
+          <IconButton type={IconButtonKind.Dark} name="close" onClick={toggleNav} />
         </div>
       </TabletAndSmaller>
 
@@ -29,7 +29,7 @@ const SideNavContent: FunctionComponent<Props> = () => {
           <NavLink to="/todos" activeClassName={styles.activeNavLink} exact onClick={toggleNav}>Duck with Api Call</NavLink>
           <NavLink to="/posts" activeClassName={styles.activeNavLink} onClick={toggleNav}>Duck + Api + Nested Routes</NavLink>
           <NavLink to="/users" activeClassName={styles.activeNavLink} exact onClick={toggleNav}>Hooks with Api Call</NavLink>
-          <NavLink to="/sampleform" activeClassName={styles.activeNavLink} exact onClick={toggleNav}>Formik - Sample Form</NavLink>
+          <NavLink to="/sampleform" activeClassName={styles.activeNavLink} exact onClick={toggleNav}>Formik + Yup - Sample Form</NavLink>
         </div>
       </div >
 

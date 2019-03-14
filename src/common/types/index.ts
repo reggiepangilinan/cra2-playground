@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 
-export enum IconButtonType {
+export enum IconButtonKind {
     Dark = 'Dark',
     Light = 'Light',
 }
 
-export enum ButtonType {
+export enum ButtonKind {
     Primary = 'Primary',
     Secondary = 'Secondary',
     Danger = 'Danger',

@@ -1,21 +1,21 @@
 import React, { FunctionComponent } from "react";
 import styles from "./styles.module.scss";
-import { IconButtonType } from "../../types";
+import { IconButtonKind } from "../../types";
 import "material-design-icons/iconfont/material-icons.css";
 
 type Props = {
     name: string,
     onClick?: () => void
-    type: IconButtonType
+    type: IconButtonKind
 };
 
-const getButtonStyle = (buttonType: IconButtonType): string => {
+const getButtonStyle = (buttonType: IconButtonKind): string => {
     switch (buttonType) {
 
-        case IconButtonType.Dark:
+        case IconButtonKind.Dark:
             return styles.iconButtonDark;
 
-        case IconButtonType.Light:
+        case IconButtonKind.Light:
             return styles.iconButtonLight;
 
         default:

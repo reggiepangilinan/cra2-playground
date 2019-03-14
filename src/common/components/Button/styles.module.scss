@@ -1,6 +1,53 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
-@mixin button-base() {
 
+@mixin regular-button-base($bgColor, $textColor) {
+    padding: 10px;
+    height: 40px;
+    min-width: 110px;
+    width: auto;
+    color: $textColor;
+    font-size: 16px;
+    margin: 5px;
+    border-radius: 3px;
+    text-align: center;
+    &:hover {
+        border-width: 1px;
+    }
+
+    &:active {
+        background-color: darken($bgColor, 20%);
+    }
+}
+
+.buttonPrimary {
+    @include button-base($primary-button-color);
+    @include regular-button-base($primary-button-color, $text-color-white);
+}
+
+.buttonSecondary {
+    @include button-base($secondary-button-color);
+    @include regular-button-base($secondary-button-color, $primary-text-color);
+}
+
+.buttonDanger {
+    @include button-base($danger-button-color);
+    @include regular-button-base($danger-button-color, $text-color-white);
+}
+
+.buttonDark {
+    @include button-base($dark-button-color);
+    @include regular-button-base($dark-button-color, $text-color-white);
+}
+
+
+.buttonLight {
+    @include button-base($light-button-color);
+    @include regular-button-base($light-button-color, $primary-text-color);
+}
+
+.buttonLink {
+    @include button-base($link-button-color);
+    @include regular-button-base($link-button-color, $primary-text-color);
 }
