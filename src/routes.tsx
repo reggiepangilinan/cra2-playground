@@ -10,6 +10,9 @@ const TodosContainer = () => import('./features/patterns/todos/todos.container')
 const UsersComponent = () => import('./features/patterns/users/users.component');
 const SampleFormComponent = () => import('./features/patterns/sampleform/sampleform.component');
 
+
+const ButtonsComponent = () => import('./features/ui-toolkit/buttons');
+
 const Routes = () => {
     return (
         <Switch>
@@ -19,6 +22,8 @@ const Routes = () => {
             <Route exact path="/todos" component={AsyncComponent(TodosContainer)} />
             <Route exact path="/users" component={AsyncComponent(UsersComponent)} />
             <Route exact path="/sampleform" component={AsyncComponent(SampleFormComponent)} />
+
+            <Route exact path="/ui-toolkit/buttons" component={AsyncComponent(ButtonsComponent)} />
         </Switch>
     );
 }
