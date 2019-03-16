@@ -2,8 +2,7 @@ import React, { FunctionComponent, useState } from 'react'
 import { IDispatchProps, } from './counter.container';
 import { CounterState } from './duck/state';
 import { useCounterValue } from '../../../common/hooks';
-import IconButton from '../../../common/components/IconButton';
-import { IconButtonKind } from '../../../common/types';
+import IconButton, { IconButtonKind } from '../../../common/components/IconButton';
 
 type Props = CounterState & IDispatchProps;
 
@@ -13,7 +12,7 @@ const Counter: FunctionComponent<Props> = (props: Props) => {
 
     return (
         <div>
-            <h3>Counter</h3>
+            <h2>Counter</h2>
             <div>
                 <h5>Redux based counter</h5>
                 <h4>{props.count}</h4>

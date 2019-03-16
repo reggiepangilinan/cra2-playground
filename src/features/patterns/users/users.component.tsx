@@ -13,7 +13,7 @@ const Users: FunctionComponent<Props> = () => {
 
     return (
         <div>
-            <h3>Users</h3>
+            <h2>Users</h2>
             {
                 loadingUsers ?
                     'Loading...'

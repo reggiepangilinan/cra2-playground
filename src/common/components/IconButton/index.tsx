@@ -1,7 +1,11 @@
 import React, { FunctionComponent } from "react";
 import styles from "./styles.module.scss";
-import { IconButtonKind } from "../../types";
 import "material-design-icons/iconfont/material-icons.css";
+
+export enum IconButtonKind {
+    Dark = 'Dark',
+    Light = 'Light',
+}
 
 type Props = {
     name: string,

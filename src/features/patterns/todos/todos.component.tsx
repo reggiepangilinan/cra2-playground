@@ -14,7 +14,7 @@ const Todos: FunctionComponent<Props> = (props: Props) => {
     }, [])
     return (
         <div>
-            <h3>Todos</h3>
+            <h2>Todos</h2>
             {
                 props.requestPending ?
                     'Loading...'

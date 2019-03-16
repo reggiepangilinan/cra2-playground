@@ -6,24 +6,33 @@
     flex-direction: column;
     label {
         font-size: 0.9em;
+        font-weight: 500;
         margin-left: 5px;
     }
     .labelError {
         color : $text-color-error;
     }
     input {
+        @include font-base();
         color: $primary-text-color;
-        background-color: darken($primary-bg-color, 3%);
+        border-radius: 2px;
+        box-shadow: $shadow-color 0px 1px 2px inset;
         font-size: 16px;
         margin: 5px 0px;
         padding: 10px 8px;
-        height: 20px;
-        border: 1px solid darken($primary-bg-color, 7%);
+        height: 15px;
+        border: 1px solid darken($primary-bg-color, 10%);
         &:focus {
             outline: none;            
             border: 1px solid $text-input-focus-color;
         }
+        &::placeholder {
+            color: lighten($primary-text-color, 40%);
+        }
     }
+
+
+    
     margin-bottom: 20px;
 }
 

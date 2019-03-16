@@ -14,7 +14,7 @@ const Posts: FunctionComponent<Props> = (props: Props) => {
     }, [])
     return (
         <div>
-            <h3>Posts</h3>
+            <h2>Posts</h2>
             {
                 props.requestPending ?
                     'Loading...'

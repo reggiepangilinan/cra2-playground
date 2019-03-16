@@ -1,0 +1,86 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.formFieldGroup {
+    display: flex;
+    flex-direction: column;
+
+    fieldset {
+        padding: 0;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        legend {
+            padding: 0;
+            font-weight: 500;
+            font-size: 0.9em;
+            margin-left: 5px;
+            margin-bottom: 15px;
+        }
+        .labelError {
+            color : $text-color-error;
+        } 
+        
+        .radioOptionWrapper {
+            user-select: none;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 10px;
+
+            & input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            & p {
+                margin: 0px 0px 0px 20px;
+            }
+
+            & .checkmark {
+                top: 0;
+                left: 0;
+                height: 20px;
+                width: 20px;
+                background-color: #eee;
+                border-radius: 50%;
+            }
+
+
+            &:hover input ~ .checkmark {
+                background-color:$accent-color;
+            }
+
+
+            & input:checked ~ .checkmark {
+                background-color: $secondary-bg-color;
+            }
+
+            & .checkmark:after {
+                content: "";
+                position: relative;
+                display: none;
+            }
+
+            & input:checked ~ .checkmark:after {
+                display: block;
+            }
+
+            & .checkmark:after {
+               width: 8px;
+               height: 8px;
+               border-radius: 50%;
+               background: $text-color-white;
+               top: 6px;
+               left: 6px;
+           }
+
+        }
+    }
+
+ 
+    margin-bottom: 20px;
+}
+

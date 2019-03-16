@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styles from './App.module.scss';
 import Routes from '../../routes';
 import { NavLink, Switch, BrowserRouter } from 'react-router-dom';
-import { Desktop, Tablet, Phone } from '../../common/components/Breakpoints';
 import { ThemeContext } from '../../common/context/theme';
 import Header from '../../common/components/Header';
 import SideNav from '../../common/components/SideNav';

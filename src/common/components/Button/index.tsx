@@ -1,6 +1,15 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent } from 'react';
 import styles from './styles.module.scss';
-import { ButtonKind as ButtonKind } from "../../types";
+
+
+export enum ButtonKind {
+    Primary = 'Primary',
+    Secondary = 'Secondary',
+    Danger = 'Danger',
+    Dark = 'Dark',
+    Light = 'Light',
+    Link = 'Link',
+}
 
 type Props = {
     text: string,
@@ -37,11 +46,8 @@ const getButtonStyle = (buttonType: ButtonKind): string => {
 }
 
 const Button: FunctionComponent<Props> = (props: Props) => {
-
-        
-    
     return (
-        <button type={props.type} className={getButtonStyle(props.kind)} onClick={props.onClick}>
+        <button type={props.type ? props.type : "button"} className={getButtonStyle(props.kind)} onClick={props.onClick}>
             {props.kind === ButtonKind.Link ?
                 <a href={props.href ? props.href : ''}>{props.text}</a>
                 : props.text

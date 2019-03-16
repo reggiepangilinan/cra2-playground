@@ -1,9 +1,8 @@
 import React, { FunctionComponent } from 'react'
 import styles from './styles.module.scss';
 import useSideNavToggle from '../../common/components/SideNavToggleProvider/useSideNavToggle';
-import IconButton from '../../common/components/IconButton';
+import IconButton, { IconButtonKind } from '../../common/components/IconButton';
 import { TabletAndSmaller } from '../../common/components/Breakpoints';
-import { IconButtonKind } from '../../common/types';
 
 type Props = {
 

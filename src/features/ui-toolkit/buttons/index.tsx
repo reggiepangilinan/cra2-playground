@@ -1,8 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import styles from './styles.module.scss';
-import Button from '../../../common/components/Button';
-import { ButtonKind, IconButtonKind } from '../../../common/types';
-import IconButton from '../../../common/components/IconButton';
+import Button, { ButtonKind } from '../../../common/components/Button';
+import IconButton, { IconButtonKind } from '../../../common/components/IconButton';
 
 type Props = {
 
@@ -11,7 +10,7 @@ type Props = {
 const Buttons: FunctionComponent<Props> = () => {
   return (
     <div>
-      <h3>Buttons</h3>
+      <h2>Buttons</h2>
       <div className={styles.content}>
         <Button kind={ButtonKind.Primary} text="Primary" />
         <Button kind={ButtonKind.Secondary} text="Secondary" />
@@ -21,7 +20,7 @@ const Buttons: FunctionComponent<Props> = () => {
         <Button kind={ButtonKind.Link} text="Link" />
       </div>
 
-      <h3>Icon Buttons</h3>
+      <h2>Icon Buttons</h2>
       <div className={styles.content}>
         <IconButton type={IconButtonKind.Dark} name="menu" />
         <IconButton type={IconButtonKind.Light} name="close" />

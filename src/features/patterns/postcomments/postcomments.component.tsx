@@ -23,7 +23,7 @@ const PostComments: FunctionComponent<Props> = (props: Props) => {
 
     return (
         <div>
-            <h3>Post Comment</h3>
+            <h2>Post Comment</h2>
             {
                 props.requestPending ?
                     'Loading...'

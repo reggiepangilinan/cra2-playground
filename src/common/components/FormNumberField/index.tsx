@@ -1,23 +1,23 @@
 import React, { FunctionComponent, ChangeEvent } from "react";
 import styles from './styles.module.scss';
-import { Field } from "formik";
+import { Field, FieldProps } from "formik";
+
+export type NumberField = number | string;
 
 type Props = {
     name: string,
     touched?: boolean,
     label: string,
     placeholder: string,
-    type?: "text" | "password" | "number" | "email",
     error?: string
+    disabled?: boolean
 };
 
-const FormField: FunctionComponent<Props> = (props: Props) => {
-
+const FormNumberField: FunctionComponent<Props> = (props: Props) => {
     const displayError = props.touched && props.error;
-
     return (
         <div className={styles.formFieldGroup}>
-            { displayError ?
+            {displayError ?
                 <label className={styles.labelError}>
                     {props.error}
                 </label>
@@ -26,12 +26,14 @@ const FormField: FunctionComponent<Props> = (props: Props) => {
                     {props.label}
                 </label>
             }
-            <Field className={styles.field}
-                type={props.type}
+            <Field name={props.name}
+                disabled={props.disabled}
+                type="number"
                 placeholder={props.placeholder}
-                name={props.name}
             />
         </div>
     );
 }
-export default FormField;
+
+
+export default FormNumberField;

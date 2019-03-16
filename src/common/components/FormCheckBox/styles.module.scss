@@ -1,0 +1,102 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.formFieldGroup {
+    display: flex;
+    flex-direction: column;
+    label {
+        margin-left: 5px;
+    }
+    .labelCheckBoxWrapper {
+        display: flex;
+        align-items: center;
+        p {
+            margin-top: 5px;
+            margin-bottom: 0px;
+        }
+    }
+    .labelError {
+        font-size: 0.9em;
+        font-weight: 500;
+        color : $text-color-error;
+        margin-bottom: 5px;
+    }
+
+    .checkbox {
+        position: absolute; // take it out of document flow
+        opacity: 0; // hide it
+      
+        & + p {
+          position: relative;
+          cursor: pointer;
+          padding: 0;
+        }
+      
+        // Box.
+        & + p:before {
+          content: '';
+          margin-right: 15px;
+          display: inline-block;
+          vertical-align: text-top;
+          width: 20px;
+          height: 20px;
+          background: $primary-bg-color;
+          box-shadow: 0 0 0 2px darken($primary-bg-color, 10%);
+        }
+      
+        // Box hover
+        &:hover + p:before {
+          background: lighten($accent-color, 10%);
+          
+        }
+        
+        // Box focus
+        &:focus + p:before {
+          box-shadow: 0 0 0 2px darken($primary-bg-color, 10%);
+        }
+      
+        // Box checked
+        &:checked + p:before {
+          background: $secondary-bg-color;
+        }
+        
+        // Disabled state p.
+        &:disabled + p {
+          color: #b8b8b8;
+          cursor: auto;
+        }
+      
+        // Disabled box.
+        &:disabled + p:before {
+          box-shadow: none;
+          background: #ddd;
+        }
+      
+        // Checkmark. Could be replaced with an image
+        &:checked + p:after {
+          content: '';
+          position: absolute;
+          left: 5px;
+          top: 9px;
+          background: white;
+          width: 2px;
+          height: 2px;
+          box-shadow: 
+            2px 0 0 white,
+            4px 0 0 white,
+            4px -2px 0 white,
+            4px -4px 0 white,
+            4px -6px 0 white,
+            4px -8px 0 white;
+          transform: rotate(45deg);
+        }
+      }
+
+
+
+
+
+
+    margin-bottom: 20px;
+}
+
