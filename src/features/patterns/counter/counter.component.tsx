@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState } from 'react'
 import { IDispatchProps, } from './counter.container';
 import { CounterState } from './duck/state';
-import { useCounterValue } from '../../../common/hooks';
+import { useCounterValue } from './hooks';
 import IconButton, { IconButtonKind } from '../../../common/components/IconButton';
 
 type Props = CounterState & IDispatchProps;

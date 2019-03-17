@@ -8,8 +8,9 @@ import SideNav from '../../common/components/SideNav';
 import SideNavToggleProvider from '../../common/components/SideNavToggleProvider';
 import HeaderContent from '../header-content/HeaderContent';
 import SideNavContent from '../sidenav-content/SideNavContent';
-
-
+import { ToastContainer, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Flip } from 'react-toastify';
 
 const App = () => {
   const [theme, setTheme] = useState({ current: 'default' });
@@ -30,6 +31,15 @@ const App = () => {
             <Routes />
           </Switch>
         </main>
+
+        <ToastContainer
+          hideProgressBar
+          position="top-right"
+          draggable={false}
+          
+          autoClose={5000}
+          transition={Slide}
+        />
 
       </>
     </BrowserRouter>

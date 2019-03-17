@@ -1,28 +1,25 @@
-import React, { useEffect, FunctionComponent } from 'react'
+import React, { FunctionComponent } from 'react'
 import { UserModel } from './models';
-import { useUsersState } from './hooks/useUsersState';
+import useAsync from 'react-use/lib/useAsync';
+import { getUsers } from '../../../api/blogApi';
 
 type Props = UserModel[];
 
 const Users: FunctionComponent<Props> = () => {
-    const { users, getUsersRequest, error, loadingUsers } = useUsersState([]);
-
-    useEffect(() => {
-        getUsersRequest();
-    }, []);
-
+    const {loading, value: response, error} = useAsync(getUsers);
     return (
         <div>
             <h2>Users</h2>
             {
-                loadingUsers ?
-                    'Loading...'
+                loading ?
+                    <div>Loading...</div>
                     :
-                    users.map(u => <div key={u.id.toString()}>
+                    response && response.data.map(u => 
+                    <div key={u.id.toString()}>
                         {u.name}
                     </div>)
             }
-            {error && <div>{error}</div>}
+            {error && <div>{error.message}</div>}
         </div>
     )
 }

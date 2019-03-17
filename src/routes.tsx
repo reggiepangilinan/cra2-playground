@@ -13,6 +13,8 @@ const SampleFormComponent = () => import('./features/patterns/sampleform/samplef
 
 const ButtonsComponent = () => import('./features/ui-toolkit/buttons');
 const InputsComponent = () => import('./features/ui-toolkit/inputs');
+const NotificationsComponent = () => import('./features/ui-toolkit/notifications');
+const SpinnerComponent = () => import('./features/ui-toolkit/spinner');
 
 const Routes = () => {
     return (
@@ -26,6 +28,8 @@ const Routes = () => {
 
             <Route exact path="/ui-toolkit/buttons" component={AsyncComponent(ButtonsComponent)} />
             <Route exact path="/ui-toolkit/inputs" component={AsyncComponent(InputsComponent)} />
+            <Route exact path="/ui-toolkit/notifications" component={AsyncComponent(NotificationsComponent)} />
+            <Route exact path="/ui-toolkit/spinner" component={AsyncComponent(SpinnerComponent)} />
         </Switch>
     );
 }
