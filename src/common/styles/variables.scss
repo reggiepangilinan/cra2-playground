@@ -15,8 +15,8 @@ $secondary-bg-color: #373737 !default;
 $accent-color : #FFBA35 !default;
 $shadow-color: rgba(163, 163, 163, 0.25) !default;
 
-
 $text-input-focus-color: darken($primary-bg-color, 40%);
+$input-disabled-bg-color: hsl(0,0%,95%); //Following react-select disabled bg color. Do not change coz react-select style is hard to override
 
 $primary-button-color: #373737 !default;
 $secondary-button-color: #FFBA35 !default;

@@ -19,6 +19,10 @@
     &:active {
         background-color: darken($bgColor, 20%);
     }
+
+    &:disabled {
+        background-color: lighten($bgColor, 20%);
+    }
 }
 
 .buttonPrimary {

@@ -34,7 +34,7 @@ const FormRadioGroup: FunctionComponent<Props> = (props: Props) => {
                 }
                 {props.options.map(opt =>
                     <label className={styles.radioOptionWrapper} id={opt.id} key={opt.id}>
-                        <Field name={props.name} type="radio" value={opt.value} checked={props.currentValue === opt.value}/>
+                        <Field name={props.name} type="radio" value={opt.value} checked={props.currentValue === opt.value} disabled={props.disabled}/>
                         <span className={styles.checkmark}></span>
                         <p>
                             {opt.label}

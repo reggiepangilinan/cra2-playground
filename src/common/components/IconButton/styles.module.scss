@@ -9,7 +9,12 @@
   height: 40px;
   width: 40px;
   margin: 5px;
-  line-height: 50%
+  line-height: 50%;
+
+
+  &:disabled {
+    background-color: lighten($secondary-bg-color, 20%);
+  }
 }
 
 .iconButtonLight {
@@ -19,4 +24,8 @@
   height: 40px;
   width: 40px;
   margin: 5px;
+  &:disabled {
+    background-color: darken($primary-bg-color, 20%);
+    color: lighten($primary-text-color, 40%);
+  }
 }

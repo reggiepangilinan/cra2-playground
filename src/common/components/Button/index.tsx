@@ -16,7 +16,8 @@ type Props = {
     onClick?: () => void,
     kind: ButtonKind,
     href?: string,
-    type?: string
+    type?: string,
+    disabled?: boolean
 };
 
 const getButtonStyle = (buttonType: ButtonKind): string => {
@@ -47,8 +48,13 @@ const getButtonStyle = (buttonType: ButtonKind): string => {
 
 const Button: FunctionComponent<Props> = (props: Props) => {
     return (
-        <button type={props.type ? props.type : "button"} className={getButtonStyle(props.kind)} onClick={props.onClick}>
-            {props.kind === ButtonKind.Link ?
+        <button 
+            type={props.type ? props.type : "button"} 
+            className={getButtonStyle(props.kind)} 
+            onClick={props.onClick} 
+            disabled={props.disabled}
+            >
+            {props.kind === ButtonKind.Link && !props.disabled ?
                 <a href={props.href ? props.href : ''}>{props.text}</a>
                 : props.text
             }

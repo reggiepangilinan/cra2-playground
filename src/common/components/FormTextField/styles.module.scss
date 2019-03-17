@@ -29,6 +29,10 @@
         &::placeholder {
             color: lighten($primary-text-color, 40%);
         }
+
+        &:disabled {
+            background-color:$input-disabled-bg-color;
+        }
     }
 
 

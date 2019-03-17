@@ -23,7 +23,6 @@ type Props = {
 
 const FormSelect: FunctionComponent<Props> = (props: Props) => {
     const displayError = props.touched && props.error;
-    console.log('Current value', props.currentValue)
     return (
         <div className={styles.formFieldGroup}>
             {displayError ?

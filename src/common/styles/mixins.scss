@@ -66,4 +66,7 @@
     background-color: darken($primary-bg-color, 5%);
     color: $primary-text-color;
   }
+  .form-select__single-value--is-disabled {
+    color: $primary-text-color;
+  }
 }
