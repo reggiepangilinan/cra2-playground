@@ -1,0 +1,18 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.formFieldGroup {
+    display: flex;
+    flex-direction: column;
+    label {
+        font-weight: 500;
+        font-size: 0.9em;
+        margin-left: 5px;
+    }
+    .labelError {
+        color : $text-color-error;
+    }
+    
+    margin-bottom: 20px;
+}
+

@@ -41,3 +41,29 @@
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
+
+
+
+.form-select-container {
+  & .form-select__control
+  {
+    color: $primary-text-color;
+    box-shadow: $shadow-color 0px 1px 2px inset;
+    border-radius: 2px;
+    border: 1px solid darken($primary-bg-color, 10%);
+    margin: 5px 0px;
+  }
+  .form-select__control--menu-is-open,
+  .form-select__control--is-focused  {
+    outline: none;            
+    border: 1px solid $text-input-focus-color !important;
+  }
+  .form-select__option--is-selected {
+    background-color: $secondary-bg-color;
+    color: $text-color-white;
+  }
+  .form-select__option--is-focused {
+    background-color: darken($primary-bg-color, 5%);
+    color: $primary-text-color;
+  }
+}

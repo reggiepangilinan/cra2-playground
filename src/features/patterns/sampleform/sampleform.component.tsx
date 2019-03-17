@@ -7,6 +7,7 @@ import FormCheckBox from '../../../common/components/FormCheckBox';
 import FormNumberField, { NumberField } from '../../../common/components/FormNumberField';
 import validatonSchema from './sampleform.validator';
 import FormRadioGroup from '../../../common/components/FormRadioGroup';
+import FormSelect, { FormSelectOption } from '../../../common/components/FormSelect';
 
 type Props = {
 
@@ -18,7 +19,9 @@ export type SampleFormModel = {
   isAgreed: boolean,
   password: string,
   age: NumberField,
-  temperature?: string
+  temperature?: string,
+  favoriteColor?: FormSelectOption,
+  favoriteDishes: FormSelectOption[]
 };
 
 const handleSubmit = (values: SampleFormModel) => {
@@ -31,15 +34,17 @@ const initialValues = {
   isAgreed: false,
   password: '',
   age: '',
-  temperature: undefined
+  temperature: undefined,
+  favoriteColor: undefined,
+  favoriteDishes: []
 };
-
 
 const SampleForm: FunctionComponent<Props> = () => {
   return (
     <div>
       <h2>Sample form</h2>
       <Formik
+        enableReinitialize={false}
         initialValues={initialValues}
         onSubmit={handleSubmit}
         validationSchema={validatonSchema}
@@ -83,8 +88,46 @@ const SampleForm: FunctionComponent<Props> = () => {
               error={errors.temperature}
               currentValue={values.temperature}
               options={[
-                  { id: 'hot', label: 'Hot', value: 'hot'},
-                  { id: 'cold', label: 'Cold', value: 'cold'}
+                { id: 'hot', label: 'Hot', value: 'hot' },
+                { id: 'cold', label: 'Cold', value: 'cold' }
+              ]}
+            />
+
+
+
+
+
+            <FormSelect
+              name='favoriteColor'
+              placeholder='List of colors'
+              label='Your most favorite color of all time'
+              touched={touched.favoriteColor}
+              error={errors.favoriteColor}
+              currentValue={values.favoriteColor}
+              multi={false}
+              searchable={false}
+              options={[
+                { label: 'Red', value: 'red' },
+                { label: 'Blue', value: 'blue' },
+                { label: 'Yellow', value: 'yellow' },
+                { label: 'Green', value: 'green' }
+              ]}
+            />
+
+            <FormSelect
+              name='favoriteDishes'
+              placeholder='Select at least 3 favorite dishes'
+              label='Your favorite dishes'
+              touched={touched.favoriteDishes}
+              error={errors.favoriteDishes}
+              currentValue={values.favoriteDishes}
+              multi={true}
+              searchable={true}
+              options={[
+                { label: 'Filipino', value: 'filippino' },
+                { label: 'Japanese', value: 'jap' },
+                { label: 'Korean', value: 'korean' },
+                { label: 'Chinese', value: 'Chinese' }
               ]}
             />
 
