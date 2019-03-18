@@ -1,2 +1,18 @@
 @import '../../../common/styles/variables.scss';
 @import '../../../common/styles/mixins.scss';
+
+.content {
+  h2 {
+    margin-bottom: 40px;
+  }
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      width: 450px;
+    }
+  }

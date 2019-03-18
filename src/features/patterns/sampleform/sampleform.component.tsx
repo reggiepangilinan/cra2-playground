@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect } from 'react';
+import React, { FunctionComponent, useEffect, useState, useRef } from 'react';
 import { Formik, FormikProps, Form, FormikActions } from 'formik';
 import useAsync from 'react-use/lib/useAsync';
 import { toast } from 'react-toastify';
@@ -9,15 +9,14 @@ import FormCheckBox from '../../../common/components/FormCheckBox';
 import FormNumberField from '../../../common/components/FormNumberField';
 import FormRadioGroup from '../../../common/components/FormRadioGroup';
 import FormSelect from '../../../common/components/FormSelect';
-import { useSavedFormState } from './hooks/useSavedFormState';
 import { SampleFormModel } from './models';
 import { promiseSimulator } from '../../../common/utils';
 import validatonSchema from './sampleform.validator'
 
-
 type Props = {
 
 }
+
 const initialValues: SampleFormModel = {
   name: '',
   email: '',
@@ -29,36 +28,40 @@ const initialValues: SampleFormModel = {
   favoriteDishes: []
 };
 
-// Handle setState when component is already unmounted
-// If using axios track api call using axios instead
-// https://stackoverflow.com/questions/49906437/how-to-cancel-a-fetch-on-componentwillunmount
-// https://medium.freecodecamp.org/how-to-work-with-react-the-right-way-to-avoid-some-common-pitfalls-fc9eb5e34d9e
-let mounted = true;
-
 const handleSubmit = async (
   values: SampleFormModel,
   actions: FormikActions<SampleFormModel>,
+  isMounted: React.MutableRefObject<boolean>,
   setSavedFormData: (newFormData: SampleFormModel) => void
 ) => {
-  const newValue = await promiseSimulator(values, 2000);
-  if (mounted) {
+  const newValue = await promiseSimulator(values, 5000);
+
+  if (isMounted.current) {
     actions.setSubmitting(false);
     actions.resetForm(newValue); //Reset form with the latest starting values
     setSavedFormData(newValue);
     toast.success('Yey! Data saved :)');
   }
+
 };
 
 const SampleForm: FunctionComponent<Props> = () => {
   //Simulate fake api call and retrieve data
   const { value: loadedData, loading: isLoading } = useAsync(() => promiseSimulator(initialValues, 1000), [initialValues, 1000]);
+
   //Initialize state for the saved form data by default its undefined coz user hasn't saved yet.
-  const { savedData, setSavedFormData } = useSavedFormState(undefined);
+  const [savedData, setSavedFormData] = useState<undefined | SampleFormModel>(undefined);
+
+  // Handle setState when component is already unmounted
+  // If using axios track api call using axios instead
+  // https://stackoverflow.com/questions/49906437/how-to-cancel-a-fetch-on-componentwillunmount
+  // https://medium.freecodecamp.org/how-to-work-with-react-the-right-way-to-avoid-some-common-pitfalls-fc9eb5e34d9e
+  const isMounted = useRef(true);
+
   const currentFormData = savedData ? savedData : loadedData;
 
   useEffect(() => {
-    mounted = true;
-    return () => mounted = false
+    return () => isMounted.current = false;
   }, [])
 
   if (isLoading) return <div>Processing your request...</div>;
@@ -68,7 +71,7 @@ const SampleForm: FunctionComponent<Props> = () => {
       <h2>Sample form</h2>
       <Formik
         initialValues={currentFormData ? currentFormData : initialValues}
-        onSubmit={(values: SampleFormModel, actions: FormikActions<SampleFormModel>) => handleSubmit(values, actions, setSavedFormData)}
+        onSubmit={(values: SampleFormModel, actions: FormikActions<SampleFormModel>) => handleSubmit(values, actions, isMounted, setSavedFormData)}
         validationSchema={validatonSchema}
         render={({ touched, errors, resetForm, values, dirty, isSubmitting }: FormikProps<SampleFormModel>) => (
           <Form className={styles.sampleForm}>
