@@ -4,6 +4,8 @@ import { Formik, Form } from 'formik';
 import FormTextField from '../../../common/components/FormTextField';
 import FormNumberField from '../../../common/components/FormNumberField';
 import FormRadioGroup from '../../../common/components/FormRadioGroup';
+import FormCheckBox from '../../../common/components/FormCheckBox';
+import FormSelect from '../../../common/components/FormSelect';
 
 
 type Props = {
@@ -23,7 +25,23 @@ const initialValues = {
 
   radioGroup: '',
   radioGroupDisabled: '',
+
+  checkBox: true,
+  checkBoxDisabled: true,
+  checkBoxError: false,
+
+  selectSingle: undefined,
+  selectMulti: [],
+  selectDisabled: undefined,
+  selectError: undefined
 }
+
+const selection = [
+  { label: 'Value 1', value: 1 },
+  { label: 'Value 2', value: 2 },
+  { label: 'Value 3', value: 3 },
+  { label: 'Value 4', value: 4 }
+]
 
 const renderFormTextField = () => {
   return () => (<Form className={styles.form}>
@@ -42,7 +60,6 @@ const renderFormNumericField = () => {
     <FormNumberField disabled={false} name="numericFieldError" label="Text Field with Error" placeholder="Text field with error" touched={true} error={'Minimum of 1k please :)'} />
   </Form>);
 }
-
 
 const renderFormRadioGroup = (values: typeof initialValues) => {
   return (<Form className={styles.form}>
@@ -87,11 +104,92 @@ const renderFormRadioGroup = (values: typeof initialValues) => {
   </Form>);
 }
 
+const renderFormCheckBox = (values: typeof initialValues) => {
+  return (<Form className={styles.form}>
+    <FormCheckBox
+      name="checkBox"
+      label="Do you agree? Make sure you agree."
+      touched={false}
+      checked={values.checkBox}
+    />
 
+    <FormCheckBox
+      disabled
+      name="checkBoxDisabled"
+      label="Can't touch this..."
+      touched={false}
+      checked={values.checkBoxDisabled}
+    />
+
+
+    <FormCheckBox
+      name="checkBoxError"
+      label="Some checkbox label"
+      error="This is an error message"
+      touched
+      checked={values.checkBoxError}
+    />
+
+  </Form>);
+}
+
+const renderFormSelect = (values: typeof initialValues) => {
+  return (<Form className={styles.form}>
+    <FormSelect
+      name='selectSingle'
+      placeholder='Please select a single value'
+      label='Single select'
+      currentValue={values.selectSingle}
+      multi={false}
+      searchable={true}
+      options={selection}
+    />
+
+    <FormSelect
+      name='selectMulti'
+      placeholder='Please select multiple values'
+      label='Multiple select'
+      currentValue={values.selectMulti}
+      multi
+      searchable={true}
+      options={selection}
+    />
+
+    <FormSelect
+      disabled
+      name='selectDisabled'
+      placeholder='Disabled select'
+      label='Disabled select'
+      currentValue={values.selectDisabled}
+      multi={false}
+      searchable={false}
+      options={selection}
+    />
+
+
+<FormSelect
+      name='selectError'
+      placeholder='This has error'
+      label='Not displayed'
+      error='This is a sample error'
+      currentValue={values.selectError}
+      multi={false}
+      searchable={false}
+      options={selection}
+      touched
+      
+    />
+
+
+
+
+  </Form>);
+}
 
 const Inputs: FunctionComponent<Props> = () => {
   return (
     <div className={styles.content}>
+
       <h2>Form Field - Text, Email and Password</h2>
       <div className={styles.content}>
         <Formik
@@ -100,6 +198,7 @@ const Inputs: FunctionComponent<Props> = () => {
           render={renderFormTextField()}
         />
       </div>
+
       <h2>Form Field - Numeric</h2>
       <div className={styles.content}>
         <Formik
@@ -108,6 +207,7 @@ const Inputs: FunctionComponent<Props> = () => {
           render={renderFormNumericField()}
         />
       </div>
+
       <h2>Form Field - Radio Button Group</h2>
       <div className={styles.content}>
         <Formik
@@ -116,6 +216,26 @@ const Inputs: FunctionComponent<Props> = () => {
           render={({ values }) => renderFormRadioGroup(values)}
         />
       </div>
+
+      <h2>Form Field - Checkbox</h2>
+      <div className={styles.content}>
+        <Formik
+          initialValues={initialValues}
+          onSubmit={() => { }}
+          render={({ values }) => renderFormCheckBox(values)}
+        />
+      </div>
+
+
+      <h2>Form Field - Select</h2>
+      <div className={styles.content}>
+        <Formik
+          initialValues={initialValues}
+          onSubmit={() => { }}
+          render={({ values }) => renderFormSelect(values)}
+        />
+      </div>
+
     </div>
   )
 }
