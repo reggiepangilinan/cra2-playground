@@ -29,6 +29,7 @@ const FormNumberField: FunctionComponent<Props> = (props: Props) => {
             <Field name={props.name}
                 disabled={props.disabled}
                 type="number"
+                lang="en"
                 placeholder={props.placeholder}
             />
         </div>
