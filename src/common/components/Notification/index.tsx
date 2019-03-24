@@ -1,6 +1,7 @@
 import React, { FunctionComponent, ReactNode } from "react";
 import styles from './styles.module.scss';
 import Icon from "../Icon";
+import { toast } from "react-toastify";
 
 export enum NotificationType {
     Default = 'default',
@@ -37,13 +38,54 @@ const getIcon = (type: NotificationType, iconName?: string): ReactNode => {
 const Notification: FunctionComponent<Props> = (props: Props) => {
     return (
         <div className={styles.notificationWrapper}>
-            <div className={styles.messageWrapper}>
-                {getIcon(props.type, props.iconName)}
-            </div>
-            <div className={styles.messageWrapper}>
-                <p>{props.message}</p>
-            </div>
+            {getIcon(props.type, props.iconName)}
+            <p>{props.message}</p>
         </div>
     );
 }
+
+
+
+export const notifyDefault = (message: string) => toast(
+    <Notification type={NotificationType.Default}
+        message={message}
+    />, {
+        className: 'toast-container',
+        bodyClassName: 'toast-body'
+    });
+
+export const notifySuccess = (message: string) => toast(
+    <Notification type={NotificationType.Success}
+        message={message}
+    />, {
+        className: 'toast-container',
+        bodyClassName: 'toast-body'
+    });
+
+export const notifyError = (message: string) => toast(
+    <Notification type={NotificationType.Error}
+        message={message}
+    />, {
+        className: 'toast-container',
+        bodyClassName: 'toast-body'
+    });
+
+
+export const notifyWarning = (message: string) => toast(
+    <Notification type={NotificationType.Warning}
+        message={message}
+    />, {
+        className: 'toast-container',
+        bodyClassName: 'toast-body'
+    });
+
+
+export const notifyInfo = (message: string) => toast(
+    <Notification type={NotificationType.Info}
+        message={message}
+    />, {
+        className: 'toast-container',
+        bodyClassName: 'toast-body'
+    });
+
 export default Notification;

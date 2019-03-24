@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useEffect, useState, useRef } from 'react';
 import { Formik, FormikProps, Form, FormikActions } from 'formik';
 import useAsync from 'react-use/lib/useAsync';
-import { toast } from 'react-toastify';
 import styles from './sampleform.module.scss';
 import Button, { ButtonKind } from '../../../common/components/Button';
 import FormTextField from '../../../common/components/FormTextField';
@@ -12,6 +11,7 @@ import FormSelect from '../../../common/components/FormSelect';
 import { SampleFormModel } from './models';
 import { promiseSimulator } from '../../../common/utils';
 import validatonSchema from './sampleform.validator'
+import { notifySuccess } from '../../../common/components/Notification';
 
 type Props = {
 
@@ -40,7 +40,9 @@ const handleSubmit = async (
     actions.setSubmitting(false);
     actions.resetForm(newValue); //Reset form with the latest starting values
     setSavedFormData(newValue);
-    toast.success('Yey! Data saved :)');
+
+    //Notify users depending on the results
+    notifySuccess('Form Saved')
   }
 
 };
@@ -178,7 +180,6 @@ const SampleForm: FunctionComponent<Props> = () => {
       />
     </div>
   )
-
 }
 
 export default SampleForm;

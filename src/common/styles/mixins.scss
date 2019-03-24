@@ -43,7 +43,15 @@
 }
 
 
+@mixin toastBody($textColor, $bgColor) {
+  color: $textColor;
+  background-color: $bgColor;
+}
 
+
+
+
+// Global Styles
 .form-select-container {
   & .form-select__control
   {
@@ -70,3 +78,13 @@
     color: $primary-text-color;
   }
 }
+
+.toast-container {
+  width: auto;
+  background-color: lighten($secondary-bg-color, 15%) !important;
+}
+
+.toast-body {
+  @include toastBody($text-color-white, lighten($secondary-bg-color, 15%));
+}
+

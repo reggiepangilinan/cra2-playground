@@ -5,7 +5,7 @@
 @mixin notifIconBase($bgColor) {
   margin: 10px;
   height: 35px;
-  width: 35px;
+  min-width: 35px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -15,12 +15,8 @@
 }
 
 .notificationWrapper {
-  min-height: 70px;
-  height: auto;
   display: flex;
   flex-direction: row;
-  color: $text-color-white;
-  background-color: lighten($secondary-bg-color, 10%);
 }
 
 .iconDefault {
@@ -28,17 +24,17 @@
 }
 
 .iconSuccess {
-  @include notifIconBase(#53DE6A);
+  @include notifIconBase($success-color);
 }
 
 .iconWarning {
-  @include notifIconBase(#FFBA35);
+  @include notifIconBase($warning-color);
 }
 
 .iconInfo {
-  @include notifIconBase(#007AFF);
+  @include notifIconBase($info-color);
 }
 
 .iconError {
-  @include notifIconBase($text-color-error);
+  @include notifIconBase($error-color);
 }

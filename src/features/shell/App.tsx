@@ -33,15 +33,12 @@ const App = () => {
         </main>
 
         <ToastContainer
-          className='toast-container'
-          toastClassName='toast'
           hideProgressBar
           position="top-right"
           draggable={false}
-          autoClose={false}
+          autoClose={5000}
           transition={Slide}
         />
-
       </>
     </BrowserRouter>
   );

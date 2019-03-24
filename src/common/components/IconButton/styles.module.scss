@@ -8,9 +8,9 @@
   text-align: center;
   height: 40px;
   width: 40px;
+  border-radius: 40px;
   margin: 5px;
   line-height: 50%;
-
 
   &:disabled {
     background-color: lighten($secondary-bg-color, 20%);
@@ -23,6 +23,7 @@
   text-align: center;
   height: 40px;
   width: 40px;
+  border-radius: 40px;
   margin: 5px;
   &:disabled {
     background-color: darken($primary-bg-color, 20%);

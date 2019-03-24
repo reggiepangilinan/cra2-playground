@@ -14,12 +14,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-
-.toast-container {
-  width: auto;
-  .toast {
-    color: $text-color-white;
-    background-color: lighten($secondary-bg-color, 10%);
-  }
-}
