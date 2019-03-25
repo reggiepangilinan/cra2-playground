@@ -12,7 +12,7 @@ const Spinner: FunctionComponent<Props> = () => {
     <div>
       <h2>Spinner</h2>
       <div className={styles.content}>
-        <Loader message="Simple Spinner" />
+        <Loader type={LoaderType.simple} message="Simple Spinner" />
       </div>
 
       <div className={styles.content}>

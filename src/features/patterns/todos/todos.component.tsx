@@ -2,7 +2,7 @@ import React, { useEffect, FunctionComponent } from 'react'
 import { IDispatchProps } from './todos.container';
 import { TodosState } from './duck/state';
 import { Table, TableHead, TableHeader, TableRow, TableCell } from '../../../common/components/Table';
-import Loader from '../../../common/components/Loader';
+import Loader, { LoaderType } from '../../../common/components/Loader';
 
 type Props = TodosState & IDispatchProps;
 
@@ -16,7 +16,7 @@ const Todos: FunctionComponent<Props> = (props: Props) => {
     }, [])
 
     if (props.requestPending)
-        return <Loader fillcontainer/>
+        return <Loader fillcontainer type={LoaderType.simple}/>
 
     if (props.error)
         return <div>{props.error}</div>
