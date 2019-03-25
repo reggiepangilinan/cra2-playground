@@ -5,7 +5,7 @@ import { TodosState } from './state';
 
 const initialState: TodosState = {
     todos: [],
-    requestPending: false
+    requestPending: true
 }
 
 const postsReducer: Reducer<TodosState, ITodosRequestAction> = (

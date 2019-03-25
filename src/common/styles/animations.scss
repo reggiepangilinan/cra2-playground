@@ -11,6 +11,6 @@
   }
 }
 
-@mixin fadein {
-  animation: fadein 0.5s;
+@mixin fadein($time : 0.5s) {
+  animation: fadein $time;
 }

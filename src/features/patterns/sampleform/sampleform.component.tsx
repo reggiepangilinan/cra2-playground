@@ -12,6 +12,7 @@ import { SampleFormModel } from './models';
 import { promiseSimulator } from '../../../common/utils';
 import validatonSchema from './sampleform.validator'
 import { notifySuccess } from '../../../common/components/Notification';
+import Loader from '../../../common/components/Loader';
 
 type Props = {
 
@@ -66,7 +67,7 @@ const SampleForm: FunctionComponent<Props> = () => {
     return () => isMounted.current = false;
   }, [])
 
-  if (isLoading) return <div>Processing your request...</div>;
+  if (isLoading) return <Loader fillcontainer/>;
 
   return (
     <div>

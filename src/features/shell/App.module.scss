@@ -3,6 +3,7 @@
 @import '../../common/styles/animations.scss';
 
 .main {
+  @include fadein(1s);
   z-index: 1;
   margin-top: 50px;
   padding: 10px 15px;
