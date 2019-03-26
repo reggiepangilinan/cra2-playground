@@ -3,25 +3,27 @@
 
 
 @mixin regular-button-base($bgColor, $textColor) {
-    padding: 10px;
-    height: 40px;
-    min-width: 110px;
+    padding: 5px;
+    height: 30px;
+    min-width: 90px;
     width: auto;
     color: $textColor;
-    font-size: 16px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
     margin: 5px;
     border-radius: 3px;
     text-align: center;
+    box-shadow: 0px 4px 10px $shadow-color;
     &:hover {
         border-width: 1px;
     }
-
     &:active {
-        background-color: darken($bgColor, 20%);
+        background-color: darken($bgColor, 30%);
     }
 
     &:disabled {
-        background-color: lighten($bgColor, 20%);
+        background-color: lighten($bgColor, 25%);
+        box-shadow: none;
     }
 }
 
