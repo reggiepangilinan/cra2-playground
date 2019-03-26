@@ -16,6 +16,8 @@ const InputsComponent = () => import('./features/ui-toolkit/inputs');
 const NotificationsComponent = () => import('./features/ui-toolkit/notifications');
 const TableSampleComponent = () => import('./features/ui-toolkit/table');
 const SpinnerComponent = () => import('./features/ui-toolkit/spinner');
+const CardComponent = () => import('./features/ui-toolkit/card');
+const AvatarComponent = () => import('./features/ui-toolkit/avatar');
 
 const Routes = () => {
     return (
@@ -27,11 +29,13 @@ const Routes = () => {
             <Route exact path="/users" component={AsyncComponent(UsersComponent)} />
             <Route exact path="/sampleform" component={AsyncComponent(SampleFormComponent)} />
 
+            <Route exact path="/ui-toolkit/avatar" component={AsyncComponent(AvatarComponent)} />
             <Route exact path="/ui-toolkit/buttons" component={AsyncComponent(ButtonsComponent)} />
             <Route exact path="/ui-toolkit/inputs" component={AsyncComponent(InputsComponent)} />
             <Route exact path="/ui-toolkit/notifications" component={AsyncComponent(NotificationsComponent)} />
             <Route exact path="/ui-toolkit/table" component={AsyncComponent(TableSampleComponent)} />
             <Route exact path="/ui-toolkit/spinner" component={AsyncComponent(SpinnerComponent)} />
+            <Route exact path="/ui-toolkit/card" component={AsyncComponent(CardComponent)} />
         </Switch>
     );
 }

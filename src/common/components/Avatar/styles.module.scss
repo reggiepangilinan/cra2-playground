@@ -1,0 +1,12 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  border: 1px solid darken($shadow-color, 10%);
+  background-color: darken($primary-bg-color,10%);
+  box-sizing: border-box;
+}
+

@@ -1,0 +1,11 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.cardContainer {
+  margin: 5px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 3px 0px darken($shadow-color,30%), 
+              0px 1px 1px 0px darken($shadow-color,80%), 
+              0px 2px 1px -1px darken($shadow-color,10%);
+}
+

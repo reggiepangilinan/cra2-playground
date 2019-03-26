@@ -36,7 +36,9 @@ const SideNavContent: FunctionComponent<Props> = () => {
       <div className={styles.navGroup}>
         <h3>UI Toolkit</h3>
         <div className={styles.navLinksWrapper}>
+          <NavLink to="/ui-toolkit/avatar" activeClassName={styles.activeNavLink} exact onClick={toggleNav}>Avatar</NavLink>
           <NavLink to="/ui-toolkit/buttons" activeClassName={styles.activeNavLink} exact onClick={toggleNav}>Buttons</NavLink>
+          <NavLink to="/ui-toolkit/card" activeClassName={styles.activeNavLink} exact onClick={toggleNav}>Card</NavLink>
           <NavLink to="/ui-toolkit/inputs" activeClassName={styles.activeNavLink} exact onClick={toggleNav}>Inputs</NavLink>
           <NavLink to="/ui-toolkit/notifications" activeClassName={styles.activeNavLink} exact onClick={toggleNav}>Notifications</NavLink>
           <NavLink to="/ui-toolkit/table" activeClassName={styles.activeNavLink} exact onClick={toggleNav}>Table</NavLink>
