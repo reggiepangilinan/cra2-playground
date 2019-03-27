@@ -2,23 +2,42 @@
 @import "../../../common/styles/mixins.scss";
 
 .content {
-  margin: 20px;
-  width: 500px;
+
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  > * {
+    margin: 10px;
+  }
+
+  @include phone {
+
+
+    > * {
+      margin-bottom: 20px;
+    }
+
+    flex-direction: column;
+    align-items: center;
+
+    
+  }
 }
 
 .cardHeader {
-  padding: 5px 10px;
+  padding: 20px 10px;
   display: flex;
   .avatarWrapper {
     flex: 1;
   }
   .textWrapper {
-    padding: 0px 15px;
+    padding: 0px 10px;
     flex: 5;
     .primaryText {
       font-weight: 600;
     }
-
     .subText {
       margin-top: 10px;
       color: lighten($primary-text-color, 40%);
@@ -28,15 +47,13 @@
 
 .cardContent {
   img {
-    margin: 20px 0px;
-    width: 350px;
+    height: 100%;
+    width: 100%;
   }
 }
 
 .cardFooter {
-    padding: 5px 10px;
-    display: flex;
-
-    justify-content: flex-end;
-
+  padding: 5px 10px;
+  display: flex;
+  justify-content: flex-end;
 }
