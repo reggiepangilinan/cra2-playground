@@ -1,18 +1,9 @@
-@mixin tile-base($backgroundColor) {
-  background-color: $backgroundColor;
-  padding: 15px;
-  margin-bottom: 20px;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    transform: scale(1.03);
+.content {
+  > * {
+    margin-bottom: 30px;
   }
 }
 
-.tile-default {
-    @include tile-base(#fff);
-}
-
-.tile-red {
-    @include tile-base(#ff8787);
+.postWrapper {
+  padding: 0px 20px 20px;
 }

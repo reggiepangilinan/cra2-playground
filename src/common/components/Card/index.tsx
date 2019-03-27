@@ -2,13 +2,20 @@ import React, { FunctionComponent, CSSProperties } from "react";
 import styles from './styles.module.scss';
 import { WithChildren } from "../../types";
 
-type Props = {
+type CardHeaderProps = {
+  
+} 
+
+
+
+type CardProps = {
     style?: CSSProperties;
+    scaleOnHover?: boolean
 } & WithChildren
 
-const Card: FunctionComponent<Props> = (props: Props) => {
+const Card: FunctionComponent<CardProps> = (props: CardProps) => {
     return (
-        <div className={styles.cardContainer} style={props.style}>
+        <div className={props.scaleOnHover? styles.cardScaleOnHover : styles.cardDefault} style={props.style}>
             {props.children}
         </div>
     );

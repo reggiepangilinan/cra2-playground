@@ -2,7 +2,6 @@
 @import "../../../common/styles/mixins.scss";
 
 .content {
-
   margin: 10px;
   display: flex;
   flex-direction: row;
@@ -13,35 +12,12 @@
   }
 
   @include phone {
-
-
     > * {
       margin-bottom: 20px;
     }
 
     flex-direction: column;
     align-items: center;
-
-    
-  }
-}
-
-.cardHeader {
-  padding: 20px 10px;
-  display: flex;
-  .avatarWrapper {
-    flex: 1;
-  }
-  .textWrapper {
-    padding: 0px 10px;
-    flex: 5;
-    .primaryText {
-      font-weight: 600;
-    }
-    .subText {
-      margin-top: 10px;
-      color: lighten($primary-text-color, 40%);
-    }
   }
 }
 

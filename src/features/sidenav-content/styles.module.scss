@@ -25,11 +25,10 @@
 
 
 .navLinksWrapper {
-    margin-left: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 90%;
+    width: 95%;
     a {
         color: $text-color-white;
         text-decoration: none;

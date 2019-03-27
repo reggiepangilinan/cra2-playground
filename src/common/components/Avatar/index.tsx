@@ -2,12 +2,12 @@ import React, { FunctionComponent, ReactNode } from "react";
 import styles from './styles.module.scss';
 import defaultavatar from './defaultavatar.png';
 
-type Props = {
+export type AvatarProps = {
     src?: string,
     size?: number
 }
 
-const Avatar: FunctionComponent<Props> = (props: Props) => {
+const Avatar: FunctionComponent<AvatarProps> = (props: AvatarProps) => {
 
     const src = props.src ? props.src : defaultavatar;
     const style = props.size ? {

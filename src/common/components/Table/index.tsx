@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactNode, ReactChildren } from "react";
 import styles from './styles.module.scss';
-import { string } from "yup";
+
 
 
 
@@ -25,11 +25,8 @@ type TableHeaderProps = {
     maxWidth?: string,
 }
 export const TableHeader: FunctionComponent<TableHeaderProps> = (props: TableHeaderProps) => {
-
     const currentAlign = props.align ? props.align : "left";
-
     const style = props.maxWidth ? { maxWidth: props.maxWidth, width: props.maxWidth } : {};
-
     return (
         <th style={style} align={currentAlign}>{props.label}</th>
     )
