@@ -1,7 +1,42 @@
-@import '../../../common/styles/variables.scss';
-@import '../../../common/styles/mixins.scss';
+@import "../../../common/styles/variables.scss";
+@import "../../../common/styles/mixins.scss";
 
 .content {
-    margin: 20px;
-    width: 200px;
+  margin: 20px;
+  width: 500px;
+}
+
+.cardHeader {
+  padding: 5px 10px;
+  display: flex;
+  .avatarWrapper {
+    flex: 1;
+  }
+  .textWrapper {
+    padding: 0px 15px;
+    flex: 5;
+    .primaryText {
+      font-weight: 600;
+    }
+
+    .subText {
+      margin-top: 10px;
+      color: lighten($primary-text-color, 40%);
+    }
+  }
+}
+
+.cardContent {
+  img {
+    margin: 20px 0px;
+    width: 350px;
+  }
+}
+
+.cardFooter {
+    padding: 5px 10px;
+    display: flex;
+
+    justify-content: flex-end;
+
 }
