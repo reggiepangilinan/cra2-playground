@@ -5,7 +5,7 @@ import { PostCommentsState } from './state';
 
 const initialState: PostCommentsState = {
     comments: [],
-    requestPending: false
+    requestPending: true
 }
 
 const postCommentsReducer: Reducer<PostCommentsState, IPostCommentsRequestAction> = (

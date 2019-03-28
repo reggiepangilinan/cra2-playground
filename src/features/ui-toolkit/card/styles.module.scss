@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
   > * {
     margin: 10px;
   }
@@ -15,21 +14,11 @@
     > * {
       margin-bottom: 20px;
     }
-
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
   }
 }
 
-.cardContent {
-  img {
-    height: 100%;
-    width: 100%;
-  }
-}
-
-.cardFooter {
-  padding: 5px 10px;
-  display: flex;
-  justify-content: flex-end;
+.image {
+  height: 100%;
+  width: 100%;
 }

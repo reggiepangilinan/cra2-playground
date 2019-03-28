@@ -7,7 +7,7 @@ import { PostsState } from './state';
 
 const initialState: PostsState = {
     posts: [],
-    requestPending: false
+    requestPending: true
 }
 
 const postsReducer: Reducer<PostsState, IPostRequestAction> = (
