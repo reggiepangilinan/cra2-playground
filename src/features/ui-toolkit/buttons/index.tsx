@@ -38,15 +38,15 @@ const Buttons: FunctionComponent<Props> = () => {
 
       <h2>Icon Buttons</h2>
       <div className={styles.content}>
-        <IconButton type={IconButtonKind.Dark} name="menu" />
-        <IconButton type={IconButtonKind.Light} name="close" />
+        <IconButton kind={IconButtonKind.Dark} name="menu" />
+        <IconButton kind={IconButtonKind.Light} name="close" />
       </div>
 
 
       <h2>Disabled Icon Buttons</h2>
       <div className={styles.content}>
-        <IconButton type={IconButtonKind.Dark} name="menu" disabled/>
-        <IconButton type={IconButtonKind.Light} name="close" disabled/>
+        <IconButton kind={IconButtonKind.Dark} name="menu" disabled/>
+        <IconButton kind={IconButtonKind.Light} name="close" disabled/>
       </div>
 
     </div>

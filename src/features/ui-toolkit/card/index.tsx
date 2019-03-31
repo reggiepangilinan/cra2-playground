@@ -19,9 +19,9 @@ const CardSample: FunctionComponent<Props> = () => {
   const header = <CardHeader avatar={<Avatar />} primaryText="This is a very long text i think" subText="Some supporting text" />;
 
   const footer = <CardFooter style={cardFooterStyle}>
-    <IconButton type={IconButtonKind.Light} name='favorite' />
-    <IconButton type={IconButtonKind.Light} name='share' />
-    <IconButton type={IconButtonKind.Light} name='more_vert' />
+    <IconButton kind={IconButtonKind.Light} name='favorite' />
+    <IconButton kind={IconButtonKind.Light} name='share' />
+    <IconButton kind={IconButtonKind.Light} name='more_vert' />
   </CardFooter>;
 
   return (

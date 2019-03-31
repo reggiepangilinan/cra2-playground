@@ -10,7 +10,8 @@ export enum IconButtonKind {
 type Props = {
     name: string,
     onClick?: () => void
-    type: IconButtonKind,
+    kind: IconButtonKind,
+    type?: string,
     disabled?: boolean
 };
 
@@ -30,7 +31,7 @@ const getButtonStyle = (buttonType: IconButtonKind): string => {
 
 const IconButton: FunctionComponent<Props> = (props: Props) => {
     return (
-        <button className={getButtonStyle(props.type)} onClick={props.onClick} disabled={props.disabled}>
+        <button className={getButtonStyle(props.kind)} onClick={props.onClick} disabled={props.disabled} type={props.type ? props.type : "button"}>
             <i className="material-icons">{props.name}</i>
         </button>
     );

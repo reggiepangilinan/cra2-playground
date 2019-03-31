@@ -17,7 +17,7 @@ const SideNavContent: FunctionComponent<Props> = () => {
 
       <TabletAndSmaller>
         <div className={styles.buttonWrapper}>
-          <IconButton type={IconButtonKind.Dark} name="close" onClick={toggleNav} />
+          <IconButton kind={IconButtonKind.Dark} name="close" onClick={toggleNav} />
         </div>
       </TabletAndSmaller>
 

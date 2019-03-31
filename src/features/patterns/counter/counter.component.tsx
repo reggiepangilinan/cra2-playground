@@ -16,15 +16,15 @@ const Counter: FunctionComponent<Props> = (props: Props) => {
             <div>
                 <h5>Redux based counter</h5>
                 <h4>{props.count}</h4>
-                <IconButton onClick={() => props.counterIncrement(1)} name="arrow_upward" type={IconButtonKind.Dark}/>
-                <IconButton onClick={() => props.counterDecrement(1)} name="arrow_downward" type={IconButtonKind.Dark}/>
+                <IconButton onClick={() => props.counterIncrement(1)} name="arrow_upward" kind={IconButtonKind.Dark}/>
+                <IconButton onClick={() => props.counterDecrement(1)} name="arrow_downward" kind={IconButtonKind.Dark}/>
             </div>
 
             <div>
                 <h5>Hooks based counter</h5>
                 <h4>{count}</h4>
-                <IconButton onClick={() => setValue(count + 1)} name="arrow_upward" type={IconButtonKind.Dark}/>
-                <IconButton onClick={() => setValue(count - 1)} name="arrow_downward" type={IconButtonKind.Dark}/>
+                <IconButton onClick={() => setValue(count + 1)} name="arrow_upward" kind={IconButtonKind.Dark}/>
+                <IconButton onClick={() => setValue(count - 1)} name="arrow_downward" kind={IconButtonKind.Dark}/>
             </div>
             <NestedComponentReusingHook />
         </div>)
@@ -37,8 +37,8 @@ const NestedComponentReusingHook: FunctionComponent = () => {
     return (<div>
         <h5>Re-used hooks based counter</h5>
         <h4>{count}</h4>
-        <IconButton onClick={() => setValue(count + 100, 2)} name="arrow_upward" type={IconButtonKind.Dark}/>
-        <IconButton onClick={() => setValue(count - 1, 1.5)} name="arrow_downward" type={IconButtonKind.Dark}/>
+        <IconButton onClick={() => setValue(count + 100, 2)} name="arrow_upward" kind={IconButtonKind.Dark}/>
+        <IconButton onClick={() => setValue(count - 1, 1.5)} name="arrow_downward" kind={IconButtonKind.Dark}/>
     </div>);
 }
 

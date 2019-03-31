@@ -17,7 +17,7 @@ const HeaderContent: FunctionComponent<Props> = () => {
       </h3>
       <TabletAndSmaller>
         <div className={styles.buttonWrapper}>
-          <IconButton type={IconButtonKind.Light} onClick={() => toggleSideNav()} name="menu" />
+          <IconButton kind={IconButtonKind.Light} onClick={() => toggleSideNav()} name="menu" />
         </div>
       </TabletAndSmaller>
     </div>
